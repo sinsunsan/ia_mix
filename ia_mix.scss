@@ -8,17 +8,17 @@
 // Standard HTML Variables
 @import "ia_variables";
 
+// Standard Drupal specific Variables
+@import "ia_drupal_variables";
+
 // Standard Mixins
 @import "ia_mixin";
 
-// Standard Text styles that can be extended
-@import "ia_styles";
-
-// Standard Drupal class Variables
-@import "ia_drupal_variables";
-
 // Standard Drupal Mixins
 @import "ia_drupal";
+
+// Standard styles that can be extended
+@import "ia_styles";
 
 // Common style
 @import "ia_common";

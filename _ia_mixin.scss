@@ -71,6 +71,9 @@
 }
 
 // Form field style in drupal 
+// $tx-col: Color of the text
+// $tx-size: Size of the text
+// $tx-weight: Weight of the text
 @mixin ia_field_label ($tx-col: $ia-col-tx-main, $tx-size: $ia-tx-norm, $tx-weight: normal) {
   color: $tx-col;
   font-size: $tx-size;

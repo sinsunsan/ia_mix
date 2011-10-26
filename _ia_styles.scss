@@ -4,17 +4,16 @@
 // Some comon style for the site that could be overriden and extended
 // It use variables values
 // It defined base classes that are genarally not applied directly 
-// They are assigned to existing drupal class thanks to @extend syntax
+// Instead they are assigned to existing drupal class thanks to @extend syntax
 
 // Standards :
 // - The folowing style will be in the final style sheet
-// - For this we use the /**/ comment style in order the final css stylesheet class be commented
+// - For this reason we use the /**/ comment style in order the final css stylesheet class be commented
 
 
 /* Style of the text of label field */
-.ia-drupal-label-field-tx {
-  color: $ia-col-tx-main;
-  font-size: $ia-tx-norm;
+.ia-drupal-field-label {
+  @include ia_field_label($tx-size: $ia-tx-norm , $tx-weight: bold , $tx-col: $ia-col-tx-main);
 }
 
 .ia-drupal-form-description {
@@ -26,6 +25,8 @@
 }
 
 
+/* Drupal buttons */
+
 .ia-button {
   @include ia-button($tx-size: $ia-tx-norm)
 }
@@ -36,3 +37,24 @@
 .ia-button-light {
   @include ia-button($tx-size: $ia-tx-norm, $radius: 10px);
 }
+
+/* Drupal fields */
+
+.ia-field-norm {
+  height: $ia-drupal-field-height-norm;
+}
+.ia-field-big {
+  height: $ia-drupal-field-height-big;
+}
+
+.ia-fieldset-simple {
+  border: dotted 1px $ia-line-col;
+  margin: 1em 0.5em 1em 0.5em;
+  padding: $ia-marg-small;
+}
+
+.ia-drupal_message-status {
+  border: $ia-line-style 1px $ia-line-col;
+  
+}
+

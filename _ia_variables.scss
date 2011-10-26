@@ -7,12 +7,11 @@
 // - variable name are not prefixed with ia and use - as separator
 // - variable designed to target pseudo element are just appended with the name of this pseudo element
 // - For example $col-tx for normal state and $col-tx-hover for hover state
+// Standard suffix or prefix
+// col : color
+// tx : text
+// marg: margin
 
-
-
-/*
- * Text size
-*/
 
 // Texte size in em
 $tx-xs: 0.6em;
@@ -31,10 +30,7 @@ $tx-xl: 16px;
 $tx-xxl: 20px;
 
 
-/*
- * Text size by use case
- * These use cases can be reproduced from site to site
-*/
+// Text size by use case
 
 $ia-tx-high: $tx-xxl; // Big text used to highlight some element
 $ia-tx-title: $tx-l; // Text size used in title
@@ -42,12 +38,9 @@ $ia-tx-norm: $tx-m; // Normal text used in text paragraphs
 $ia-tx-note: $tx-s;// Small text used in notes for example
 
 
-/*
- * Text color types
- * 
- * These colors indend to provide colors types that is commonly used in web site
- * The color value itself will probably be overriden from site to site
-*/
+// Text color types
+// These colors indend to provide colors types that is commonly used in web site
+// The color value itself will probably be overriden from site to site
 
 // Colors of the text
 $ia-col-tx-main: black; // Main color used for text on the site 
@@ -69,11 +62,9 @@ $ia-button-border-style: solid; // Line type of the border of the button
 
 // Colors of lines
 $ia-line-col: #CCC; // Color for border and separator
-$ia-line-style: solide; // Default style for lines
+$ia-line-style: solid; // Default style for lines
 
-/*
- * Margin and padding
-*/
+// Margin and padding
 // Standard margin or padding between elements
 $ia-marg-big: 40px;
 $ia-marg-norm: 20px;

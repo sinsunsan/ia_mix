@@ -1,6 +1,21 @@
 // ia_drupal.scss part of ia_mix suite
 // http://github.com/sinsunsan/ia_mix
 
+// This file contains applications of ia styles to drupal classes 
+
+
+// Drupal region
+// Message status zone
+// There is four possible status depending of the message
+// .status : status message
+// .error : error message
+// .warning : warning message
+div.messages.status, 
+div.messages.error, 
+div.messages.warning {
+  @extend .ia-drupal-message-status;
+}
+
 
 /* Form fields label */
 
@@ -10,7 +25,13 @@
 fieldset legend,
 /* fieldset label */
 .form-item label {
-  @extend .ia-drupal-label-field-tx;
+  @extend .ia-drupal-field-label;
+}
+
+// options list are label but do not need so much space
+.form-checkboxes .form-item, 
+.form-radios .form-item {
+  padding: 0;
 }
 
 /* Description of a fieldset at the top of the fieldset */
@@ -20,6 +41,35 @@ fieldset .description,
   @extend .ia-drupal-form-description;
 }
 
+
+/* Fieldset */
+
+// Collapsed state of field set 
+html.js fieldset.collapsed {
+  //no border for collapsed fieldset
+  border: 0;
+  margin: 0;
+  padding: 0.5em;
+}
+
+fieldset {
+  @extend .ia-fieldset-simple;
+  padding: $ia-marg-big;
+}
+
+/* Form fields */
+/* Single line text input */
+.form-item input[type="text"] {
+  @extend .ia-field-norm;
+}
+/* Title field */
+.form-item input[type="text"]#edit-title {
+  height: $ia-tx-title*1.75;
+  width: 75%;
+}
+
+.form-item {
+} 
 
 
 /* Buttons */
