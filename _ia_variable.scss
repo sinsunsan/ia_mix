@@ -1,0 +1,69 @@
+/*
+ * Standard IA Variables by IA-Image
+ * http://www.ia-image.com
+ *
+ * Theses variables are used as default values by _ia_mixin.scss
+ * Insert this files before _ia_mixin.scss
+ *
+ * Standards :
+ * - variable name are not prefixed with ia and use - as separator
+ * 
+ */
+
+/*
+ * Margin and padding
+*/
+// Standard margin or padding between elements
+$marg-big: 40px;
+$marg-norm: 20px;
+$marg-small: 10px;
+
+
+/*
+ * Text size
+*/
+
+// Texte size in em
+$tx-xs: 0.6em;
+$tx-s: 0.8em;
+$tx-m: 0.9em; 
+$tx-l: 1.2em;
+$tx-xl: 1.5em;
+$tx-xxl: 2em;
+
+// Text size in px (comment to use text-size in em)
+$tx-xs: 8px;
+$tx-s: 10px;
+$tx-m: 12px; 
+$tx-l: 14px;
+$tx-xl: 16px;
+$tx-xxl: 20px;
+
+
+/*
+ * Text size by use case
+ * These use cases can be reproduced from site to site
+*/
+
+$tx-high: $tx-xxl; // Big text used to highlight some element
+$tx-title: $tx-l; // Text size used in title
+$tx-norm: $tx-m; // Normal text used in text paragraphs
+$tx-note: $tx-s;// Small text used in notes for example
+
+
+/*
+ * Text color types
+ * 
+ * These colors indend to provide colors types that is commonly used in web site
+ * The color value itself will probably be overriden from site to site
+*/
+
+$col-tx-main: black; // Main color used for text on the site 
+$col-tx-sec:  black; // Secondary color for text
+$col-tx-ter: black; // Tertiary color fo text
+$col-tx-link:  blue; // Color used to separate visually links form other texts
+$col-tx-link-hover: red; // Color used for links in hover state
+$col-back: white; // Color for the background
+$col-line: #CCC; // Color for border and separator
+  
+

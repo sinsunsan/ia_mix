@@ -1,0 +1,63 @@
+/*
+ * Standard IA Mixins by IA-Image
+ * http://www.ia-image.com
+ * 
+ * Standards :
+ * - mixin name are prefixed with ia and use _ as separator
+ * - mixin use wheras possible default value for input variables 
+ * - Theses default values use ia_variable.scss variables definition
+ * - Use long name for mixin parameter in order to facilitate their reading when they are assigned a value 
+ * - For exemple $margin is better than $marg
+*/
+
+
+/* 
+ * Make a empty div with a background images
+ * 
+ * This could be used for headers with big image
+ *
+ * @param $height
+ *  Height of the div
+ * @parama $scr
+ *  Path of the image file
+ * 
+*/
+ 
+@mixin ia_empty_div($height, $src) {
+  background-image: url($src);
+  background-repeat: no-repeat;
+  height: $height;
+}
+
+/* 
+ * Make a float cell to constitute fluid grid
+ * 
+ * @param $width
+ *  Width of the floating div
+ * @parama $marg
+ *  Margin arround the floating cell
+ * 
+*/
+@mixin ia_cell_float($width, $margin:$marg-norm) {
+  margin: $margin;
+  width: $width;
+}
+
+
+/* 
+ * Standard bottom separator between element
+ * 
+ * @param $width
+ *  Width of the floating div
+ * @parama $marg
+ *  Margin arround the floating cells
+ * @parama $line-style
+ *  Line type used to draw the line between the bottom of the element and the next one
+ * 
+*/
+@mixin ia_separator($color:$col-line, $margin:$marg-norm , $line-style:solid) {
+  border-bottom: $line-style 1px $color;
+  margin-bottom: $margin;
+  padding-bottom: $margin;
+}
+

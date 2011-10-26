@@ -1,0 +1,7 @@
+IA-MIX is a libraries of Sass Mixin for Drupal Sites 
+
+They are written by Sébastien Lucas whith IA Image www.ia-image.com
+These mixins intend to abstract common elements needed to style a page
+They define default values and variable name that could be overriden from site to site 
+
+Feel free to use it and leave us a comment slucas@ia-image.com
