@@ -2,13 +2,37 @@
 // http://github.com/sinsunsan/ia_mix
 
 
-// Form fields label
+/* Form fields label */
 
-// Multiple table used by module like file field with multiple items
+/* Multiple table used by module like file field with multiple items */
 .content-multiple-table th,
-//fieldset label
+/* fields title */
 fieldset legend,
-//fields title
+/* fieldset label */
 .form-item label {
   @extend .ia-drupal-label-field-tx;
+}
+
+/* Description of a fieldset at the top of the fieldset */
+fieldset .description, 
+/* Description below field to explain the value of the fields */
+.form-item .description {
+  @extend .ia-drupal-form-description;
+}
+
+
+
+/* Buttons */
+// Standard button to submit a node on node edit form
+input[type="submit"].form-submit {
+  @extend .ia-button-big;
+}
+
+/* Standard submit button */
+input[type="submit"]
+/* Button to submit a file */
+input[type="file"], 
+/* Button to add an extra item with the multiple field widget */
+.content-add-more input[type="submit"]{
+  @extend .ia-button-light;
 }

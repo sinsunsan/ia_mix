@@ -30,7 +30,7 @@
 
 
 //Standard bottom separator between element
-@mixin ia_separator($color: $ia-col-line, $margin: $ia-marg-norm , $line-style:solid) {
+@mixin ia_separator($color: $ia-line-col, $margin: $ia-marg-norm , $line-style: $ia-line-style) {
   border-bottom: $line-style 1px $color;
   margin-bottom: $margin;
   padding-bottom: $margin;
@@ -38,14 +38,21 @@
 
 
 //Buttons
-@mixin ia_button($tx-size:$ia-tx-norm , $tx-col:$ia-col-button-tx , $tx-col-hover:$ia-col-button-tx-hover , $col-back:$ia-col-button-back , $ia-col-back-hover:$ia-col-button-back-hover, $border-col:$ia-col-button-back , $border-type:solid , $radius:0) {
+// $tx-size : Size of the text
+// $tx-col : Color of the text 
+// $tx-col-hover : Color of the text hovered
+// $col-back : Color of the background
+// $col-back-hover : Color of the hovered backgroun
+// $border-type : solid, dashed 
+// $radius of the button if any
+@mixin ia_button($tx-size: $ia-tx-norm , $tx-col: $ia-button-tx-col , $tx-col-hover: $ia-button-tx-col-hover , $col-back: $ia-button-back-col , $ia-back-col-hover: $ia-button-back-col-hover, $border-col: $ia-button-border-col , $border-type: solid , $radius: 0) {
   
-  background: none;
+  background: $col-back;
   
   // Border styling 
   border: 0;
-  border: $border-col 1px $border-col;
-  @if $radius != 0 {@include border-radius($tx-size)};
+  border: $border-col 1px $border-type;
+  @if $radius != 0 {@include border-radius($radius)};
   
   color: $tx-col;
   cursor: pointer;
@@ -53,11 +60,12 @@
   
   //The margin and padding are dependent of $tx-size
   margin: $tx-size;
-  padding: $tx-size/2 $tx-size/1.5;
+  padding: $tx-size/1.5 $tx-size;
   
-    // Hover state
+  //float: left;
+  // Hover state
     &:hover {
-      background: $ia-col-back-hover;
+      background: $ia-back-col-hover;
       color: $tx-col-hover;
     }
 }

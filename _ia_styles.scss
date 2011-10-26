@@ -15,5 +15,24 @@
 .ia-drupal-label-field-tx {
   color: $ia-col-tx-main;
   font-size: $ia-tx-norm;
-  
+}
+
+.ia-drupal-form-description {
+  color: $ia-col-tx-main;
+  font-size: $ia-tx-note;
+  line-height:$ia-tx-note*1.5;
+  // No right padding to be align with the field
+  padding: $ia-tx-note 0;
+}
+
+
+.ia-button {
+  @include ia-button($tx-size: $ia-tx-norm)
+}
+
+.ia-button-big {
+  @include ia-button($tx-size: $ia-tx-title, $radius: 20px);
+}
+.ia-button-light {
+  @include ia-button($tx-size: $ia-tx-norm, $radius: 10px);
 }

@@ -9,14 +9,6 @@
 // - For example $col-tx for normal state and $col-tx-hover for hover state
 
 
-/*
- * Margin and padding
-*/
-// Standard margin or padding between elements
-$ia-marg-big: 40px;
-$ia-marg-norm: 20px;
-$ia-marg-small: 10px;
-
 
 /*
  * Text size
@@ -65,17 +57,28 @@ $ia-col-tx-link:  blue; // Color used to separate visually links form other text
 $ia-col-tx-link-hover: red; // Color used for links in hover state
 
 // Colors of the background
-$ia-col-back: white; // Color for the background
+$ia-back-col: white; // Color for the background
 
 // Style of the buttons
-$ia-col-button-tx: black; //Color of the text of the button
-$ia-col-button-tx-hover: blue; //Color of the text of the button in the hover state
+$ia-button-tx-col: black; //Color of the text of the button
+$ia-button-tx-col-hover: blue; //Color of the text of the button in the hover state
+$ia-button-back-col: #CCC; // Color of the background of the buttons
+$ia-button-back-col-hover: white; // Color of the background of the buttons in hover state
+$ia-button-border-col: none; //Color of the border of a button
+$ia-button-border-style: solid; // Line type of the border of the button
 
-$ia-col-button-border: #111; //Color of the border of a button
-$ia-col-button-back: #CCC; // Color of the background of the buttons
-$ia-col-button-back-hover: #111; // Color of the background of the buttons in hover state
- 
 // Colors of lines
-$ia-col-line: #CCC; // Color for border and separator
-  
+$ia-line-col: #CCC; // Color for border and separator
+$ia-line-style: solide; // Default style for lines
+
+/*
+ * Margin and padding
+*/
+// Standard margin or padding between elements
+$ia-marg-big: 40px;
+$ia-marg-norm: 20px;
+$ia-marg-small: 10px;
+
+
+
 
