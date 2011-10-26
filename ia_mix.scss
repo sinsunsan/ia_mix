@@ -6,9 +6,14 @@
  * 
 */
 
+/* Standard compass mixins */
+@import "compass";
 
 /* Standard Variables */
 @import "ia_variable";
 
 /* Standard Mixins */
 @import "ia_mixin";
+
+/* Common style */
+@import "ia_common";

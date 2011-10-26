@@ -8,6 +8,8 @@
  * - Theses default values use ia_variable.scss variables definition
  * - Use long name for mixin parameter in order to facilitate their reading when they are assigned a value 
  * - For exemple $margin is better than $marg
+ * - Global variables (defined in variable file) are prefixed with ia
+ * - Argument of the function that exist only in mixin scope are not prefixed
 */
 
 
@@ -34,11 +36,11 @@
  * 
  * @param $width
  *  Width of the floating div
- * @parama $marg
+ * @param $marg
  *  Margin arround the floating cell
  * 
 */
-@mixin ia_cell_float($width, $margin:$marg-norm) {
+@mixin ia_cell_float($width, $margin:$ia-marg-norm) {
   margin: $margin;
   width: $width;
 }
@@ -49,15 +51,50 @@
  * 
  * @param $width
  *  Width of the floating div
- * @parama $marg
+ * @param $marg
  *  Margin arround the floating cells
- * @parama $line-style
+ * @param $line-style
  *  Line type used to draw the line between the bottom of the element and the next one
  * 
 */
-@mixin ia_separator($color:$col-line, $margin:$marg-norm , $line-style:solid) {
+@mixin ia_separator($color:$ia-col-line, $margin:$ia-marg-norm , $line-style:solid) {
   border-bottom: $line-style 1px $color;
   margin-bottom: $margin;
   padding-bottom: $margin;
 }
 
+
+/* 
+ * Button with rouded corner
+ * 
+ * @param $tx-size
+ *  Size of the text of the button
+ * @param $tx-col
+ *  the color of the text of the button
+ * @param $tx-col-hover
+ *  the color of the text of the button when in hover state
+ * 
+*/
+@mixin ia_button($tx-size:$ia-tx-norm , $tx-col:$ia-col-button-tx , $tx-col-hover:$ia-col-button-tx-hover , $col-back:$ia-col-button-back , $ia-col-back-hover:$ia-col-button-back-hover, $border-col:$ia-col-button-back , $border-type:solid , $radius:0) {
+  
+  background: none;
+  
+  // Border styling 
+  border: 0;
+  border: $border-col 1px $border-col;
+  @if $radius != 0 {@include border-radius($tx-size)};
+  
+  color: $tx-col;
+  cursor: pointer;
+  font-size: $tx-size;
+  
+  //The margin and padding are dependent of $tx-size
+  margin: $tx-size;
+  padding: $tx-size/2 $tx-size/1.5;
+  
+    // Hover state
+    &:hover {
+      background: $ia-col-back-hover;
+      color: $tx-col-hover;
+    }
+}
