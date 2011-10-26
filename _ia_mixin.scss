@@ -1,80 +1,43 @@
-/*
- * Standard IA Mixins by IA-Image
- * http://www.ia-image.com
- * 
- * Standards :
- * - mixin name are prefixed with ia and use _ as separator
- * - mixin use wheras possible default value for input variables 
- * - Theses default values use ia_variable.scss variables definition
- * - Use long name for mixin parameter in order to facilitate their reading when they are assigned a value 
- * - For exemple $margin is better than $marg
- * - Global variables (defined in variable file) are prefixed with ia
- * - Argument of the function that exist only in mixin scope are not prefixed
-*/
+// ia_mixin.scss part of ia_mix suite
+// http://github.com/sinsunsan/ia_mix
+
+// Standards :
+// - mixin name are prefixed with ia and use _ as separator
+// - mixin use wheras possible default value for input variables 
+// - Theses default values use ia_variable.scss variables definition
+// - Use long name for mixin parameter in order to facilitate their reading when they are assigned a value 
+// - For exemple $margin is better than $marg
+// - Global variables (defined in variable file) are prefixed with ia
+// - Argument of the function that exist only in mixin scope are not prefixed
 
 
-/* 
- * Make a empty div with a background images
- * 
- * This could be used for headers with big image
- *
- * @param $height
- *  Height of the div
- * @parama $scr
- *  Path of the image file
- * 
-*/
- 
+
+
+// Make a empty div with a background images
+// This could be used for headers with big image
 @mixin ia_empty_div($height, $src) {
   background-image: url($src);
   background-repeat: no-repeat;
   height: $height;
 }
 
-/* 
- * Make a float cell to constitute fluid grid
- * 
- * @param $width
- *  Width of the floating div
- * @param $marg
- *  Margin arround the floating cell
- * 
-*/
+
+// Make a float cell to constitute fluid grid
 @mixin ia_cell_float($width, $margin:$ia-marg-norm) {
   margin: $margin;
   width: $width;
 }
 
 
-/* 
- * Standard bottom separator between element
- * 
- * @param $width
- *  Width of the floating div
- * @param $marg
- *  Margin arround the floating cells
- * @param $line-style
- *  Line type used to draw the line between the bottom of the element and the next one
- * 
-*/
-@mixin ia_separator($color:$ia-col-line, $margin:$ia-marg-norm , $line-style:solid) {
+//Standard bottom separator between element
+@mixin ia_separator($color: $ia-col-line, $margin: $ia-marg-norm , $line-style:solid) {
   border-bottom: $line-style 1px $color;
   margin-bottom: $margin;
   padding-bottom: $margin;
 }
 
 
-/* 
- * Button with rouded corner
- * 
- * @param $tx-size
- *  Size of the text of the button
- * @param $tx-col
- *  the color of the text of the button
- * @param $tx-col-hover
- *  the color of the text of the button when in hover state
- * 
-*/
+//Buttons
 @mixin ia_button($tx-size:$ia-tx-norm , $tx-col:$ia-col-button-tx , $tx-col-hover:$ia-col-button-tx-hover , $col-back:$ia-col-button-back , $ia-col-back-hover:$ia-col-button-back-hover, $border-col:$ia-col-button-back , $border-type:solid , $radius:0) {
   
   background: none;
@@ -98,3 +61,12 @@
       color: $tx-col-hover;
     }
 }
+
+// Form field style in drupal 
+@mixin ia_field_label ($tx-col: $ia-col-tx-main, $tx-size: $ia-tx-norm, $tx-weight: normal) {
+  color: $tx-col;
+  font-size: $tx-size;
+  font-weight: $tx-weight;
+}
+
+

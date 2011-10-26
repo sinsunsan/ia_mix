@@ -1,0 +1,14 @@
+// ia_drupal.scss part of ia_mix suite
+// http://github.com/sinsunsan/ia_mix
+
+
+// Form fields label
+
+// Multiple table used by module like file field with multiple items
+.content-multiple-table th,
+//fieldset label
+fieldset legend,
+//fields title
+.form-item label {
+  @extend .ia-drupal-label-field-tx;
+}

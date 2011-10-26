@@ -1,15 +1,13 @@
-/*
- * Standard IA Variables by IA-Image
- * http://www.ia-image.com
- *
- * Theses variables are used as default values by _ia_mixin.scss
- * Insert this files before _ia_mixin.scss
- *
- * Standards :
- * - variable name are not prefixed with ia and use - as separator
- * - variable designed to target pseudo element are just appended with the name of this pseudo element
- * - For example $col-tx for normal state and $col-tx-hover for hover state
- */
+// ia_variables.scss part of ia_mix suite
+// http://github.com/sinsunsan/ia_mix
+
+//Theses variables are used as default values by _ia_mixin.scss
+
+// Standards :
+// - variable name are not prefixed with ia and use - as separator
+// - variable designed to target pseudo element are just appended with the name of this pseudo element
+// - For example $col-tx for normal state and $col-tx-hover for hover state
+
 
 /*
  * Margin and padding

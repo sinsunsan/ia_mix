@@ -1,4 +1,5 @@
 IA-MIX is a libraries of Sass Mixin for Drupal Sites 
+Tailored for Drupal Sites and based on Compass libraries
 
 They are written by Sébastien Lucas whith IA Image www.ia-image.com
 Theses mixins intend to abstract common elements needed to style a page

@@ -1,9 +1,9 @@
 // ia_common.scss part of ia_mix suite
-//  http://www.ia-image.com
+// http://github.com/sinsunsan/ia_mix
 // ia-common make use of default variable to define common style nearly always used
 
 
-// Couleurs des liens
+// Links colors
 a {
   // Links whith hover, focus and active state are highlighted with the same color
   @include link-colors($normal: $ia-col-tx-link, $hover: $ia-col-tx-link-hover, $active: $ia-col-tx-link-hover, $visited: $ia-col-tx-link, $focus: $ia-col-tx-link-hover);

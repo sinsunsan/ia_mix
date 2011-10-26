@@ -1,0 +1,19 @@
+// ia_styles.scss part of ia_mix suite
+// http://github.com/sinsunsan/ia_mix
+
+// Some comon style for the site that could be overriden and extended
+// It use variables values
+// It defined base classes that are genarally not applied directly 
+// They are assigned to existing drupal class thanks to @extend syntax
+
+// Standards :
+// - The folowing style will be in the final style sheet
+// - For this we use the /**/ comment style in order the final css stylesheet class be commented
+
+
+/* Style of the text of label field */
+.ia-drupal-label-field-tx {
+  color: $ia-col-tx-main;
+  font-size: $ia-tx-norm;
+  
+}

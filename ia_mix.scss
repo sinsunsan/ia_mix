@@ -1,19 +1,24 @@
-/*
- * Standard IA Mixins by IA-Image
- * http://www.ia-image.com
- * 
- * Theses files insert the other files in the correct order
- * 
-*/
+// Standard IA Mixins by IA-Image
+// http://github.com/sinsunsan/ia_mix
 
-/* Standard compass mixins */
+
+// Standard compass mixins
 @import "compass";
 
-/* Standard Variables */
-@import "ia_variable";
+// Standard HTML Variables
+@import "ia_variables";
 
-/* Standard Mixins */
+// Standard Mixins
 @import "ia_mixin";
 
-/* Common style */
+// Standard Styles that can be extended
+@import "ia_styles";
+
+// Standard Drupal class Variables
+@import "ia_drupal_variables";
+
+// Standard Drupal Mixins
+@import "ia_drupal";
+
+// Common style
 @import "ia_common";
