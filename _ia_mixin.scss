@@ -81,3 +81,29 @@
 }
 
 
+// Allow to float drupal field along another field 
+// This mixin is supposed to be applied on .ia_fields_group div 
+// But it'll work on all the wrapping div around the fields
+// To make such wrapping fields use #prefix and #suffix
+// the first and last field to be floated like the following 
+// Thes line has to be placed in a hook_form_alter in a custom module
+// $form['field_edi_user_prenom'][0]['#prefix'] = '<div class="ia_fields_group">';
+// $form['field_edi_user_nom'][0]['#suffix'] = '</div>';
+
+// $margin-right : Margin between two fields
+// $field-width: define explicitly the width of the field to prevent long description to break the floating appearance 
+@mixin ia_fields_float($margin-right: 20px , $desc-max-width: 200px) {
+  @include ia_wrap_float;
+  div.form-item {
+    float: left;
+    margin-right: $margin-right;
+
+  }
+  div.description {
+    float: left;
+    width: inherit;
+    max-width: $desc-max-width;
+  }
+  
+}
+

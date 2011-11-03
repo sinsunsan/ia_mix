@@ -8,3 +8,9 @@ a {
   // Links whith hover, focus and active state are highlighted with the same color
   @include link-colors($normal: $ia-col-tx-link, $hover: $ia-col-tx-link-hover, $active: $ia-col-tx-link-hover, $visited: $ia-col-tx-link, $focus: $ia-col-tx-link-hover);
 }
+
+
+// When used on a wrapping div wrapping several cck fields those fields will float
+.ia_fields_group {
+  @include ia_fields_float();
+}

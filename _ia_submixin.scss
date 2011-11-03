@@ -1,0 +1,11 @@
+// ia_mixin.scss part of ia_mix suite
+// http://github.com/sinsunsan/ia_mix
+
+// Small elements that could be included in mixin
+
+// Allow wrapper div that contain floating element 
+// To extend to the height of its elements
+@mixin ia_wrap_float() {
+  // todo : Per aps it's not the good property investigate
+  overflow: auto;
+}
