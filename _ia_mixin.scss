@@ -93,15 +93,15 @@
 // $margin-right : Margin between two fields
 // $field-width: define explicitly the width of the field to prevent long description to break the floating appearance 
 @mixin ia_fields_float($margin-right: 20px , $desc-max-width: 200px) {
-  @include ia_wrap_float;
+  //@include ia_wrap_float;
+  // to do provide IE support as described in http://www.alsacreations.com/article/lire/1209-display-inline-block.html
   div.form-item {
-    float: left;
+    display: inline-block;
     margin-right: $margin-right;
 
   }
   div.description {
-    float: left;
-    width: inherit;
+    display: inline-block;
     max-width: $desc-max-width;
   }
   
