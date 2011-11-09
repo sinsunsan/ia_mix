@@ -103,7 +103,10 @@
 
   }
   div.description {
-    display: inline-block;
+    display: block;
+    // Allow to give a maximum width when in situation where the field has small width
+    // todo would like to avoid description with bigger width than the field
+    // As they are siblings don't know how to do that 
     max-width: $desc-max-width;
   }
   
