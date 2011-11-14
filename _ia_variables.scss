@@ -32,10 +32,11 @@ $tx-xxl: 20px;
 
 // Text size by use case
 
-$ia-tx-high: $tx-xxl; // Big text used to highlight some element
-$ia-tx-title: $tx-l; // Text size used in title
-$ia-tx-norm: $tx-m; // Normal text used in text paragraphs
-$ia-tx-note: $tx-s;// Small text used in notes for example
+$ia-tx-big:                 $tx-xxl; // Big text used to highlight some element
+$ia-tx-title-big:           $tx-xl; // Text size used in title
+$ia-tx-title:               $tx-l; // Text size used in title
+$ia-tx-norm:                $tx-m; // Normal text used in text paragraphs
+$ia-tx-note:                $tx-s; // Small text used in notes for example
 
 
 // Text color types
@@ -43,33 +44,45 @@ $ia-tx-note: $tx-s;// Small text used in notes for example
 // The color value itself will probably be overriden from site to site
 
 // Colors of the text
-$ia-col-tx-main: black; // Main color used for text on the site 
-$ia-col-tx-sec:  black; // Secondary color for text
-$ia-col-tx-ter: black; // Tertiary color fo text
-$ia-col-tx-link:  blue; // Color used to separate visually links form other texts
-$ia-col-tx-link-hover: red; // Color used for links in hover state
+$ia-col-tx-main:            black; // Main color used for text on the site 
+$ia-col-tx-sec:             black; // Secondary color for text
+$ia-col-tx-ter:             black; // Tertiary color fo text
+$ia-col-tx-link:            blue; // Color used to separate visually links form other texts
+$ia-col-tx-link-hover:      red; // Color used for links in hover state
 
 // Colors of the background
-$ia-back-col: white; // Color for the background
+$ia-back-col:               white; // Color for the background
+
+// Gray (inspired from twitter bootstrap)
+$black:                     #000;
+$ia-col-gris-black:            lighten($black, 10%);
+$ia-col-gris-dark:             lighten($black, 20%);
+$ia-col-gris-light:            lighten($black, 80%);
+$ia-col-gris-lighter:          lighten($black, 95%);
+$ia-col-gris-lighter-alt:      lighten($black, 95%);
+
+//Colors of table
+$ia-table-back-col:         #EEE; // Color of the background of a table
 
 // Style of the buttons
-$ia-button-tx-col: black; //Color of the text of the button
-$ia-button-tx-col-hover: blue; //Color of the text of the button in the hover state
-$ia-button-back-col: #CCC; // Color of the background of the buttons
-$ia-button-back-col-hover: white; // Color of the background of the buttons in hover state
-$ia-button-border-col: none; //Color of the border of a button
-$ia-button-border-style: solid; // Line type of the border of the button
+$ia-button-tx-col:          black; // Color of the text of the button
+$ia-button-tx-col-hover:    blue; // Color of the text of the button in the hover state
+$ia-button-back-col:        #CCC; // Color of the background of the buttons
+$ia-button-back-col-hover:  white; // Color of the background of the buttons in hover state
+$ia-button-border-col:      none; // Color of the border of a button
+$ia-button-border-style:    solid; // Line type of the border of the button
 
 // Colors of lines
-$ia-line-col: #CCC; // Color for border and separator
-$ia-line-style: solid; // Default style for lines
+$ia-line-col:               #CCC; // Color for border and separator
+$ia-line-style:             solid; // Default style for lines
 
 // Margin and padding
 // Standard margin or padding between elements
-$ia-marg-big: 40px;
-$ia-marg-norm: 20px;
-$ia-marg-small: 10px;
+$ia-marg-big:               40px;
+$ia-marg-norm:              20px;
+$ia-marg-small:             10px;
 
-
-
+// Grid
+// Default ia-grid for 960px grid with 16 divisions
+$ia-grid-unit:              60px;
 

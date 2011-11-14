@@ -86,3 +86,23 @@ input[type="file"],
 .content-add-more input[type="submit"]{
   @extend .ia-button-light;
 }
+
+// The autocomplete div
+html.js input.form-autocomplete {
+  background-color: $ia-back-col;
+}
+
+// Search block
+.block-search {
+  input[type="text"] {
+    background: $ia-col-gris-lighter;
+  }
+  @include ia-link;
+}
+
+
+// Filefield field
+.filefield-upload {
+  // Filefield field button
+  @include ia-link;
+}

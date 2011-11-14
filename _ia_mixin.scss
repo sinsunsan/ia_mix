@@ -70,6 +70,20 @@
     }
 }
 
+// Simple link without background
+// Should be applied on div that containe input, a
+@mixin ia-link($tx-size:$ia-tx-norm, $col-link: $ia-col-tx-link , $col-link-hover: $ia-col-tx-link-hover) {
+  input[type="submit"], 
+  input[type="submit"].form-submit {
+    background: none;
+    color: $col-link;
+    &:hover {
+      background: none;
+      color: $col-link-hover;
+    }
+  }
+}
+
 // Form field style in drupal 
 // $tx-col: Color of the text
 // $tx-size: Size of the text
@@ -78,6 +92,12 @@
   color: $tx-col;
   font-size: $tx-size;
   font-weight: $tx-weight;
+}
+
+// Standard Drupal Page
+// To think about it
+@mixin ia_page(){
+  
 }
 
 
@@ -112,3 +132,103 @@
   
 }
 
+
+
+
+
+
+// THE DRUPAL TABLES
+
+// table le tableau 
+// thead l'entête
+// tbody le corps du tableau
+// tr la ligne
+// td la cellule de corps de tableau 
+// th la cellule de fond de tableau
+
+
+// Table of numeric data
+// This table should be applied to a <table> element 
+// $back-col : Base Color of the background of the line of a table cell
+// It's the lighter color, a odd background color will be calculated from this color 
+@mixin ia-table-admi($back-col:$ia-table-back-col, $tx-size: $ia-tx-norm) {
+  table-layout: fixed;
+  th {
+    padding: $tx-size*0.6;
+  }
+  td {
+    // borders are of the color of background (white by default)
+    border: solid 1px $ia-back-col;
+  }
+  th, td { text-align: center; }
+  // Even row of the table
+  tr.even { background: $back-col; }
+  // Odd row of the table
+  tr.odd { background: darken($back-col,3%) }
+  
+  // A selectable row (VBO) 
+  // Without width, it expand too much
+  thead tr th.select {
+    width: $tx-size*4;
+    // The select list to select the rows
+    select {
+      margin: 0;
+      padding: 0;
+      position: relative;
+      right: $tx-size;
+      top: $tx-size*1.5;
+    }
+  }
+  // Actions select list provided by view bulk operation
+  .views-bulk-operations-select fieldset {
+    border: 0;
+  }
+}
+
+
+// THE DRUPAL STANDARD ADMIN VIEWS
+// To be applied on a drupal view
+// .view : The view container
+//  .view-header : The header of the view
+//  .view-content : The content of the view
+@mixin ia-view-admi($tx-size: $ia-tx-norm) {
+  .view-header {
+    padding: $ia-tx-norm*0.8 0;
+    // Link in header are a bigger, because they 
+    a {
+      font-size: $ia-tx-norm*1.2;
+    }
+  }
+  .view-content {
+    // When the view use a table 
+    // View Bulk Operation or table display 
+    // It use ia-table-admi mixin
+    
+    table {
+      @include ia-table-admi;
+    } 
+  }
+  
+}
+
+
+// List of menu item 
+// the menu item are positionned vertically
+// To be applied on a menu block
+@mixin ia-menu-block($float: left , $tx-size: $ia-tx-norm) {
+  // The containing block
+  & {
+    float: $float;
+    margin: $tx-size;
+  }
+  ul.menu {
+    li a {
+      color: $ia-col-tx-link;
+    }
+  }
+  // The title of the block
+  h2 {
+    font-size: $ia-tx-title;
+    @include ia-baseline($ia-tx-title);
+  }  
+}

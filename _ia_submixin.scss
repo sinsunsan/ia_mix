@@ -9,3 +9,13 @@
   // todo : Per aps it's not the good property investigate
   overflow: auto;
 }
+
+// The width of the $nb of column in the grid system
+@mixin ia_span($nb, $grid_unit: $ia_grid_unit) {
+  width: $nb*$grid_unit;
+}
+
+// The line height depending of the height of the tex
+@mixin ia_baseline($tx-size) {
+  line-height: 1.5*$tx-size;
+}

@@ -5,6 +5,15 @@
 // Standard compass mixins
 @import "compass";
 
+// Twitter bootstrap could be integrated in ia-mix 
+// TO think about it
+// SASS Version 
+// https://github.com/jlong/sass-twitter-bootstrap
+// Original version in LESS
+// http://twitter.github.com/bootstrap/
+//@import "sass-twitter-bootstrap/lib/bootstrap.scss";
+@import "sass-twitter-bootstrap/lib/variables.scss";
+
 // Standard HTML Variables
 @import "ia_variables";
 
