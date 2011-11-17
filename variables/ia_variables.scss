@@ -1,8 +1,20 @@
-// Standard IA Mixins by IA-Image
+// @file part of ia_mix suite
 // http://github.com/sinsunsan/ia_mix
 
 // Standard HTML Variables
 @import "variables";
+
+// Typographic variables
+@import "variables_text";
+
+// Typographic variables
+@import "variables_color";
+
+// Layout variables
+@import "variables_layout";
+
+// Standard Drupal specific Variables
+@import "variables_element";
 
 // Standard Drupal specific Variables
 @import "variables_drupal";

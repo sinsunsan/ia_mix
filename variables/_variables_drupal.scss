@@ -1,12 +1,12 @@
-// ia_drupal_variables.scss part of ia_mix suite
+// @file part of ia_mix suite
 // http://github.com/sinsunsan/ia_mix
 
-// These variables are common to drupal sites and could be overriden
+// Drupal specific variable
 
 // Height of the fields
-$ia-drupal-field-height-norm: $tx-xl;
-$ia-drupal-field-height-big: $tx-xxl;
+$ia-drupal-field-height-norm:                   $ia-tx-xl;
+$ia-drupal-field-height-big:                    $ia-tx-xxl;
 
 // Style of the fieldset
-$ia-drupal-fieldset-border-color: $ia-line-col;
-$ia-drupal-fieldset-border-style: $ia-line-style;
+$ia-drupal-fieldset-border-color:               $ia-line-col;
+$ia-drupal-fieldset-border-style:               $ia-line-style;

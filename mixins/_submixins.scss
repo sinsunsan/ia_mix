@@ -11,8 +11,8 @@
 }
 
 // The width of the $nb of column in the grid system
-@mixin ia_span($nb, $grid_unit: $ia_grid_unit) {
-  width: $nb*$grid_unit;
+@mixin ia_span($nb, $grid-column: $ia-grid-column-width) {
+  width: $nb*$grid-column;
 }
 
 // The line height depending of the height of the tex
