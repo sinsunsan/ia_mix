@@ -1,6 +1,7 @@
-// ia_common.scss part of ia_mix suite
+// ia_drupal.scss part of ia_mix suite
 // http://github.com/sinsunsan/ia_mix
-// ia-common make use of default variable to define common style nearly always used
+
+// This file contains applications of ia styles to drupal classes 
 
 
 // Links colors
@@ -9,8 +10,3 @@ a {
   @include link-colors($normal: $ia-col-tx-link, $hover: $ia-col-tx-link-hover, $active: $ia-col-tx-link-hover, $visited: $ia-col-tx-link, $focus: $ia-col-tx-link-hover);
 }
 
-
-// When used on a wrapping div wrapping several cck fields those fields will float
-.ia_fields_group {
-  @include ia_fields_float();
-}
