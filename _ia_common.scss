@@ -14,3 +14,8 @@ a {
 .ia_fields_group {
   @include ia_fields_float();
 }
+
+
+.ia-para {
+  margin-bottom: 2em;
+}
