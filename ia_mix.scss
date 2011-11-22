@@ -2,6 +2,11 @@
 // http://github.com/sinsunsan/ia_mix
 
 
+// EXTERNAL LIBRARIES
+// Standard compass mixins
+@import "compass";
+
+// EXTERNAL LIBRARIES
 // Standard compass mixins
 @import "compass";
 
@@ -12,25 +17,17 @@
 // Original version in LESS
 // http://twitter.github.com/bootstrap/
 //@import "sass-twitter-bootstrap/lib/bootstrap.scss";
-@import "sass-twitter-bootstrap/lib/variables.scss";
+//@import "sass-twitter-bootstrap/lib/variables.scss";
 
-// Standard HTML Variables
-@import "ia_variables";
 
-// Standard Drupal specific Variables
-@import "ia_drupal_variables";
+// VARIABLES
+@import "variables/ia_variables";
 
-// Standard Sub Mixins : Elements used in mixin
-@import "ia_submixin";
+// MIXINS
+@import "mixins/mixins";
 
-// Standard Mixins
-@import "ia_mixin";
+// STYLES
+@import "styles/ia_styles";
 
-// Standard Drupal Mixins
-@import "ia_drupal";
 
-// Standard styles that can be extended
-@import "ia_styles";
 
-// Common style
-@import "ia_common";

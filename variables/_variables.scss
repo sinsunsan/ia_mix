@@ -1,0 +1,27 @@
+// @file part of ia_mix suite
+// http://github.com/sinsunsan/ia_mix
+
+//Theses variables are used as default values by _ia_mixin.scss
+
+// Standards :
+// - variable name are not prefixed with ia and use - as separator
+// - variable designed to target pseudo element are just appended with the name of this pseudo element
+// - For example $col-tx for normal state and $col-tx-hover for hover state
+
+// Standard suffix or prefix
+// col : color
+// tx : text
+// marg: margin
+
+
+// GLOBAL VARIABLES
+
+// Base font
+$ia-base-tx: 12px;
+
+
+
+
+
+
+

@@ -10,3 +10,33 @@ These sass mixin libraries is dependent on compass libraries.
 So install Compass before to use ia_mix http://compass-style.org/
 
 Feel free to use it and leave us a comment slucas@ia-image.com
+
+
+HOW TO USE IT ?
+.................
+
+1/ Moving at the command line to the directory, where you want to download IA MIX
+2/ Clone the git repositery by typing git clone git@github.com:sinsunsan/ia_mix.git
+3/ You have two options to use IA MIX 
+
+  * Use only the mixins and styles provided by IA MIX 
+  
+  . You could use it on an existing theme, because of ia stuff being prepended with ia_ 
+  . There few possibility that it can conflict with existing styles or mixin
+  . @extend the IA styles or @import the is mixin into your classes
+  
+   How yo import IA MIX only : Type this line in you scss import file
+   @import "path/to/ia_mix/ia_mix";
+  
+
+  
+  * Use also the IA Drupal default theme 
+  
+  . Be careful with an existing theme as it will certainly change the apperance of your site
+  . Depending of the specificity of your css IA THEME will win of your own style 
+  . So it's better to use IA MIX THEME with a new site, and if you like our default styles
+  
+  How yo import IA MIX THEM : Type this line in you scss import file
+  @import "path/to/ia_mix/ia_mix_theme";
+  
+
