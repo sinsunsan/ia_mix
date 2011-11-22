@@ -16,7 +16,26 @@ HOW TO USE IT ?
 .................
 
 1/ Moving at the command line to the directory, where you want to download IA MIX
-2/ Clone the git repositery by typing git clone git@github.com:sinsunsan/ia_mix.git
+We recommand to put it in the following way 
+
+This folder would be the compass folder (the folder watched automaticaly by compass)
+Drupalroot/sites/all/themes/youthemes/css/
+Inside you'll have
+config.rb : The file that set the compass configuration
+css : the folder of the compiled css files
+sass : the folder of the original sass files 
+... other
+
+Inside sass folder you'll have 
+sass/ia_mix
+sass/your_sass_files
+
+ia_mix would compile in 
+css/ia_mix/ia_mix.css
+and your sass files in 
+css/your_sass_files/your_sass_files.css
+
+2/ Clone the git repositery by typing git clone git@github.com:sinsunsan/ia_mix.git in the chosen directory
 3/ You have two options to use IA MIX 
 
   * Use only the mixins and styles provided by IA MIX 
@@ -33,10 +52,13 @@ HOW TO USE IT ?
   * Use also the IA Drupal default theme 
   
   . Be careful with an existing theme as it will certainly change the apperance of your site
-  . Depending of the specificity of your css IA THEME will win of your own style 
+  . Depending of the specificity of your css IA THEME will win on your own style 
   . So it's better to use IA MIX THEME with a new site, and if you like our default styles
   
   How yo import IA MIX THEM : Type this line in you scss import file
   @import "path/to/ia_mix/ia_mix_theme";
   
+4/ Insert in your drupal theme a line to include IA mix or IA theme css file (1 file) before your theme css files  
+stylesheets[all][] = css/css/ia_mix/ia_mix_theme.css
+
 

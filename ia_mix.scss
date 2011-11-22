@@ -6,9 +6,6 @@
 // Standard compass mixins
 @import "compass";
 
-// EXTERNAL LIBRARIES
-// Standard compass mixins
-@import "compass";
 
 // Twitter bootstrap could be integrated in ia-mix 
 // TO think about it
@@ -24,7 +21,7 @@
 @import "variables/ia_variables";
 
 // MIXINS
-@import "mixins/mixins";
+@import "mixins/ia_mixins";
 
 // STYLES
 @import "styles/ia_styles";

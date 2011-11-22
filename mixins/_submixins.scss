@@ -5,17 +5,17 @@
 
 // Allow wrapper div that contain floating element 
 // To extend to the height of its elements
-@mixin ia_wrap_float() {
+@mixin ia-wrap-float() {
   // todo : Per aps it's not the good property investigate
   overflow: auto;
 }
 
 // The width of the $nb of column in the grid system
-@mixin ia_span($nb, $grid-column: $ia-grid-column-width) {
+@mixin ia-span($nb, $grid-column: $ia-grid-column-width) {
   width: $nb*$grid-column;
 }
 
 // The line height depending of the height of the tex
-@mixin ia_baseline($tx-size) {
+@mixin ia-baseline($tx-size) {
   line-height: 1.5*$tx-size;
 }
