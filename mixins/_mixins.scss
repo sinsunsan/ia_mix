@@ -45,7 +45,16 @@
 // $col-back-hover : Color of the hovered backgroun
 // $border-type : solid, dashed 
 // $radius of the button if any
-@mixin ia_button($tx-size: $ia-tx-norm , $tx-col: $ia-button-tx-col , $tx-col-hover: $ia-button-tx-col-hover , $col-back: $ia-button-back-col , $ia-back-col-hover: $ia-button-back-col-hover, $border-col: $ia-button-border-col , $border-type: solid , $radius: 0) {
+@mixin ia_button(
+$tx-size: $ia-tx-norm ,
+$tx-col: $ia-button-tx-col ,
+$tx-col-hover: $ia-button-tx-col-hover ,
+$col-back: $ia-button-back-col ,
+$ia-back-col-hover: $ia-button-back-col-hover,
+$border-col: $ia-button-border-col ,
+$border-type: solid ,
+$radius: 0
+) {
   
   background: $col-back;
   
@@ -158,7 +167,7 @@
   }
   td {
     // borders are of the color of background (white by default)
-    border: solid 1px $ia-back-col;
+    border: solid 1px $ia-col-back;
   }
   th, td { text-align: center; }
   // Even row of the table
@@ -187,10 +196,13 @@
 
 
 // THE DRUPAL STANDARD ADMIN VIEWS
-// To be applied on a drupal view
-// .view : The view container
+// 
+// To apply this mixin just add to the view the class ia-view-admi
+//  Exemple : .ia-view-admi { @include ia-view-admi; }
+//  .view : The view container
 //  .view-header : The header of the view
 //  .view-content : The content of the view
+
 @mixin ia-view-admi($tx-size: $ia-tx-norm) {
   .view-header {
     padding: $ia-tx-norm*0.8 0;
@@ -203,12 +215,10 @@
     // When the view use a table 
     // View Bulk Operation or table display 
     // It use ia-table-admi mixin
-    
     table {
       @include ia-table-admi;
     } 
   }
-  
 }
 
 

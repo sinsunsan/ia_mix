@@ -1,0 +1,108 @@
+// ia_drupal.scss part of ia_mix suite
+// http://github.com/sinsunsan/ia_mix
+
+// Settings of Drupal forms
+
+
+// Drupal region
+// Message status zone
+// There is four possible status depending of the message
+// .status : status message
+// .error : error message
+// .warning : warning message
+div.messages.status, 
+div.messages.error, 
+div.messages.warning {
+  @extend .ia-drupal-message-status;
+}
+
+
+/* Form fields label */
+
+/* Multiple table used by module like file field with multiple items */
+.content-multiple-table th,
+/* fields title */
+fieldset legend,
+/* fieldset label */
+.form-item label {
+  @extend .ia-drupal-field-label;
+}
+
+// options list are label but do not need so much space
+.form-checkboxes .form-item, 
+.form-radios .form-item {
+  padding: 0;
+}
+
+/* Description of a fieldset at the top of the fieldset */
+fieldset .description, 
+/* Description below field to explain the value of the fields */
+.form-item .description {
+  @extend .ia-drupal-form-description;
+}
+
+
+/* Fieldset */
+
+// Collapsed state of field set 
+html.js fieldset.collapsed {
+  //no border for collapsed fieldset
+  border: 0;
+  margin: 0;
+  padding: 0.5em;
+}
+
+fieldset {
+  @extend .ia-fieldset-simple;
+  padding: $ia-marg-big;
+}
+
+/* Form fields */
+/* Single line text input */
+.form-item input[type="text"] {
+  @extend .ia-field-norm;
+}
+/* Title field */
+.form-item input[type="text"]#edit-title {
+  height: $ia-tx-title*1.75;
+  width: 75%;
+}
+
+.form-item {
+} 
+
+
+/* Buttons */
+// Standard button to submit a node on node edit form
+input[type="submit"].form-submit {
+  @extend .ia-button-big;
+}
+
+/* Standard submit button */
+input[type="submit"]
+/* Button to submit a file */
+input[type="file"], 
+/* Button to add an extra item with the multiple field widget */
+.content-add-more input[type="submit"]{
+  @extend .ia-button-light;
+}
+
+// The autocomplete div
+html.js input.form-autocomplete {
+  background-color: $ia-col-back;
+}
+
+// Search block
+.block-search {
+  input[type="text"] {
+    background: $ia-col-gris-lighter;
+  }
+  @include ia-link;
+}
+
+
+// Filefield field
+.filefield-upload {
+  // Filefield field button
+  @include ia-link;
+}

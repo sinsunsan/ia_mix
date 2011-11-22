@@ -62,3 +62,26 @@ css/your_sass_files/your_sass_files.css
 stylesheets[all][] = css/css/ia_mix/ia_mix_theme.css
 
 
+STANDARDISATION
+.................
+
+Directory of scss files 
+
+Styles -> 
+classes that can be reused : the classes need to be present in the HTML 
+or inherited through the @extend syntax
+
+Mixins -> 
+mixin that can be applyied to a selector through the @include syntax
+
+Variables : 
+- The variable parts ar separated by - (eg: $ia-col-back)
+- The variable parts are ordered from the less to the more specific (eg: $ia-col-back)
+
+Variable inside mixins : 
+- The variables inside mixin should where possible reuse css syntax, like $font-size
+- A default value should be provided
+
+
+
+

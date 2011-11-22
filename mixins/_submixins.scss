@@ -19,3 +19,13 @@
 @mixin ia-baseline($tx-size) {
   line-height: 1.5*$tx-size;
 }
+
+
+// Allow to defin in one shot the font-size and the line height proportionaly
+// $font-size : Size of the text
+// $
+@mixin ia-tx-size($font-size, 
+$line-height-factor:$ia-tx-line-height-factor) {
+  font-size: $font-size;
+  line-height: $font-size * $line-height-factor;
+}

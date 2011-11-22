@@ -1,8 +1,6 @@
 // ia_drupal.scss part of ia_mix suite
 // http://github.com/sinsunsan/ia_mix
 
-// This file contains applications of ia styles to drupal classes 
-
 
 // Links colors
 a {
@@ -10,12 +8,17 @@ a {
   @include link-colors($normal: $ia-col-tx-link, $hover: $ia-col-tx-link-hover, $active: $ia-col-tx-link-hover, $visited: $ia-col-tx-link, $focus: $ia-col-tx-link-hover);
 }
 
-// When used on a wrapping div wrapping several cck fields those fields will float
-.ia_fields_group {
-  @include ia_fields_float();
+
+h1 {
+  @extend .ia-title1;
+}
+h2 {
+  @extend .ia-title2;
+}
+h3 {
+  @extend .ia-title3;
+}
+h4 {
+  @extend .ia-title4;
 }
 
-
-.ia-para {
-  margin-bottom: 2em;
-}

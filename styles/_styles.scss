@@ -62,3 +62,38 @@
 .ia_fields_group {
   @include ia_fields_float();
 }
+
+
+.ia-para {
+  margin-bottom: 2em;
+}
+
+
+// Define the default admi view class
+.ia-view-admi {
+  @include ia-view-admi;
+}
+
+
+
+
+// Standard IA title style
+// In each title level that correspond to H1 H2 H3 H4 
+// We define the following properties 
+// Mandatory
+// Font-size
+// Color
+// Line
+.ia-title1 {
+  @include ia-tx-size($ia-tx-xxl);
+}
+.ia-title2 {
+  @include ia-tx-size($ia-tx-xl);
+  
+}
+.ia-title3 {
+  @include ia-tx-size($ia-tx-l);
+}
+.ia-title4 {
+  @include ia-tx-size($ia-tx-m);
+}

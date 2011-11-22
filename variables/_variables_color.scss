@@ -3,20 +3,36 @@
 
 // Colors variables
 
+// Short cut for common colors
+$white:                         #FFF;
+$black:                         #000;
+
+
+$ia-col-tx:                   black; // Standard text color
+
 // Colors of the text
+// Deprecated
 $ia-col-tx-main:              black; // Main color used for text on the site 
 $ia-col-tx-sec:               black; // Secondary color for text
 $ia-col-tx-ter:               black; // Tertiary color fo text
+
+$ia-col-tx1:                  $ia-col-tx-main; 
+$ia-col-tx2:                  $ia-col-tx-sec;
+$ia-col-tx3:                  $ia-col-tx-ter;
+
+
 $ia-col-tx-link:              blue; // Color used to separate visually links form other texts
 $ia-col-tx-link-hover:        red; // Color used for links in hover state
 
+
 // Colors of the background
-$ia-back-col:                 white; // Color for the background
+$ia-col-back:                 white; // Color for the background
 
 // Gray (inspired from twitter bootstrap)
-$black:                        #000;
 $ia-col-gris-black:            lighten($black, 10%);
 $ia-col-gris-dark:             lighten($black, 20%);
 $ia-col-gris-light:            lighten($black, 80%);
 $ia-col-gris-lighter:          lighten($black, 95%);
 $ia-col-gris-lighter-alt:      lighten($black, 95%);
+
+
