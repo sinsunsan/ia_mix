@@ -1,7 +1,7 @@
 // @file part of ia_mix suite
 // http://github.com/sinsunsan/ia_mix
 
-// Typographic variables
+// Text size
 
 // Text size in px 
 $ia-tx-xs:                  0.66 * $ia-base-tx; // 8px
@@ -22,3 +22,47 @@ $ia-tx-note:                $ia-tx-s; // Small text used in notes for example
 
 // Typographic variables
 $ia-tx-line-height-factor:  1.5; // coef between font-size and line height
+
+
+// Style of text
+
+// Complete sentence
+
+// font-style:italic;  
+// font-variant:small-caps;
+// font-weight:bold;
+// font-size:1em;
+// line-height:140%;
+// font-family:"Lucida Grande",sans-serif;
+
+
+// Properties to be set at a global level (body ...)
+// font-family:"Lucida Grande",sans-serif;
+
+// font-variant
+  // normal  (default)
+  // small-caps (petites majuscules)
+  // inherit (Specifies that the font variant should be inherited from the parent element)
+// http://www.w3schools.com/cssref/pr_font_font-variant.asp
+  
+// font-style 
+  // normal (default)
+  // italic
+  // oblique
+  // inherit
+// http://www.w3schools.com/cssref/pr_font_font-style.asp
+
+
+// Compact sentence
+// font:italic small-caps bold 1em/140% "Lucida Grande",sans-serif;
+
+
+$ia-tx-style-link: normal normal $ia-tx-norm/$ia-tx-norm * $ia-tx-line-height-factor;
+// Hover link are generally different only by the color
+$ia-tx-style-link-hover: $ia-tx-style-link;
+
+$ia-tx-style-norm: normal normal $ia-tx-norm/$ia-tx-norm * $ia-tx-line-height-factor;
+$ia-tx-style-note: normal normal $ia-tx-note/$ia-tx-note * $ia-tx-line-height-factor;
+$ia-tx-style-big: normal normal $ia-tx-big/$ia-tx-big * $ia-tx-line-height-factor;
+
+

@@ -1,0 +1,93 @@
+// This file is part of ia_mix suite
+// http://github.com/sinsunsan/ia_mix
+
+// TABS Menu
+//
+// Drupal use tabs for a lot of interface elements 
+// Depending on the module that ouput the html
+// The targeting class will be different
+// 
+// To use apply on the main container of the tab
+// #quicktabs-edi_og_tabs {@include ia-menu-tabs}
+
+@mixin ia-menu-tabs(
+  $tx-size: 12px , // Text height from which is calculated margin and paddings
+  $float: left , // If the tabs are aligned to left of to right
+  
+  $class: 'qt_tab' , //the classes of ul in order to override drupal more specific standard css
+  $ul-class: ''  , // To target a more specific class of the tabs link container
+  
+  $border-color: false , // Deprecated
+
+  $tabs-radius: 5px, // Radius of the tabs
+
+  $tab-active-border: solid 1px $ia-col-gris-light , // The border style of the active tabs
+  $tab-active-background: transparent , // The background style of the active tabs
+  $tab-active-tx-color: false , // Only set when need to override default a style
+  $tab-active-tx-style: false , // a font one line list of properties
+  
+    
+  $tabs-border: solid 1px $ia-col-gris-light , // The border style of the inactive tabs
+  $tabs-background: $ia-col-gris-lighter , // The background style of the inactive tabs
+  $tabs-tx-color: false , // Only set when need to override default a style
+  $tabs-tx-style: false , // a font one line list of properties
+
+  $container-background:'white', // The background style of the container
+  $container-border: solid 1px $ia-col-gris-light // The border style of the container
+) {
+  // Content area
+  .quicktabs_main {
+    border: $container-border;
+    border-top: none; // The top border is hidden hidden, it's drawn by the ul element
+    min-height: 500px;
+    padding: 2em;
+  }
+  //Container of all tabs
+  ul#{$ul-class} { 
+    border-bottom: $container-border;
+    height: 100%;
+    
+    margin-top: 1.2*$tx-size;
+    overflow: hidden;
+    padding: 0;
+    width: 100%;
+    
+    // Container of on tab
+    li {
+      background: transparent;
+      
+      float: $float;
+      list-style-type: none;
+      
+      margin: 0;
+      margin-right: 0.5em;
+      padding:0;
+       
+      
+      // All tabs (including the active one) 
+      & a {
+        background: $tabs-background;
+        @if ($tabs-tx-color) { color: $tabs-tx-color; }
+        
+        @include border-top-radius($tabs-radius);
+        float: $float;
+        font-size: $tx-size;
+        margin: 0;
+        padding: $tx-size/1.5;
+      } 
+       
+      // The only active tag
+      &.active a {
+        background: $tab-active-background;
+        
+        border: $tab-active-border;
+        border-bottom: none;
+        
+        // border-bottom: solid 1px $col-blanc;
+        @if ($tab-active-tx-color) { color: $tab-active-tx-color; }
+                
+        padding: $tx-size/1,5 !important; 
+      }
+    }  
+  }
+}
