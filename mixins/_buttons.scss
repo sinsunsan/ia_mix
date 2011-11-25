@@ -1,0 +1,39 @@
+// This file is part of ia_mix suite
+// http://github.com/sinsunsan/ia_mix
+
+
+//Buttons
+@mixin ia_button(
+  $tx-size: $ia-tx-norm , // Size of the text
+  $tx-col: $ia-button-tx-col , // Color of the text 
+  $tx-col-hover: $ia-button-tx-col-hover , // Color of the text hovered
+  $col-back: $ia-button-back-col , // Color of the background
+  $ia-back-col-hover: $ia-button-back-col-hover , //Color of the hovered backgroun
+  $border-col: $ia-button-border-col , // 
+  $border-type: solid , // border-type :  solid, dashed 
+  $radius: 0 // radius of the button if any
+) 
+{
+  
+  background: $col-back;
+  
+  // Border styling 
+  border: 0;
+  border: $border-col 1px $border-type;
+  @if $radius != 0 {@include border-radius($radius)};
+  
+  color: $tx-col;
+  cursor: pointer;
+  font-size: $tx-size;
+  
+  //The margin and padding are dependent of $tx-size
+  margin: $tx-size;
+  padding: $tx-size/1.5 $tx-size;
+  
+  //float: left;
+  // Hover state
+    &:hover {
+      background: $ia-back-col-hover;
+      color: $tx-col-hover;
+    }
+}

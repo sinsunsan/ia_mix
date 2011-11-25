@@ -1,0 +1,54 @@
+// This file is part of ia_mix suite
+// http://github.com/sinsunsan/ia_mix
+
+
+
+// THE DRUPAL TABLES
+
+// To be applied on a <table> element table { @include ia-table-admi; }
+@mixin ia-table-admi(
+  $back-col: $ia-table-back-col , // Base Color of the background of the line of a table cell
+  $tx-size: $ia-tx-norm
+) {
+  
+  // TABLE HTML Elements
+  
+  // table the table
+  // thead the table header
+  // tbody the table body
+  // tr the table row
+  // td the table cell 
+  // th the table header cell
+  
+  table-layout: fixed;
+  th {
+    padding: $tx-size*0.6;
+  }
+  td {
+    // borders are of the color of background (white by default)
+    border: solid 1px $ia-col-back;
+  }
+  th, td { text-align: center; }
+  // Even row of the table
+  tr.even { background: $back-col; }
+  // Odd row of the table
+  tr.odd { background: darken($back-col,3%) }
+  
+  // A selectable row (VBO) 
+  // Without width, it expand too much
+  thead tr th.select {
+    width: $tx-size*4;
+    // The select list to select the rows
+    select {
+      margin: 0;
+      padding: 0;
+      position: relative;
+      right: $tx-size;
+      top: $tx-size*1.5;
+    }
+  }
+  // Actions select list provided by view bulk operation
+  .views-bulk-operations-select fieldset {
+    border: 0;
+  }
+}

@@ -8,5 +8,17 @@
 // Standard Mixins
 @import "mixins";
 
-// Tabs
-@import "menu_tabs"
+// Tabs : Integrate with standard drupal tabs
+@import "menu_tabs";
+
+// Buttons : Buttons make easy and configurable
+@import "fields_floats";
+
+// Fields float : Make float drupal form fields
+@import "buttons";
+
+// Drupal views
+@import "views";
+
+// Tables
+@import "tables";

@@ -12,7 +12,6 @@
 
 
 
-
 // Make a empty div with a background images
 // This could be used for headers with big image
 @mixin ia_empty_div($height, $src) {
@@ -37,47 +36,6 @@
 }
 
 
-//Buttons
-// $tx-size : Size of the text
-// $tx-col : Color of the text 
-// $tx-col-hover : Color of the text hovered
-// $col-back : Color of the background
-// $col-back-hover : Color of the hovered backgroun
-// $border-type : solid, dashed 
-// $radius of the button if any
-@mixin ia_button(
-$tx-size: $ia-tx-norm ,
-$tx-col: $ia-button-tx-col ,
-$tx-col-hover: $ia-button-tx-col-hover ,
-$col-back: $ia-button-back-col ,
-$ia-back-col-hover: $ia-button-back-col-hover,
-$border-col: $ia-button-border-col ,
-$border-type: solid ,
-$radius: 0
-) {
-  
-  background: $col-back;
-  
-  // Border styling 
-  border: 0;
-  border: $border-col 1px $border-type;
-  @if $radius != 0 {@include border-radius($radius)};
-  
-  color: $tx-col;
-  cursor: pointer;
-  font-size: $tx-size;
-  
-  //The margin and padding are dependent of $tx-size
-  margin: $tx-size;
-  padding: $tx-size/1.5 $tx-size;
-  
-  //float: left;
-  // Hover state
-    &:hover {
-      background: $ia-back-col-hover;
-      color: $tx-col-hover;
-    }
-}
 
 // Simple link without background
 // Should be applied on div that containe input, a
@@ -103,123 +61,7 @@ $radius: 0
   font-weight: $tx-weight;
 }
 
-// Standard Drupal Page
-// To think about it
-@mixin ia_page(){
-  
-}
 
-
-// Allow to float drupal field along another field 
-// This mixin is supposed to be applied on .ia_fields_group div 
-// But it'll work on all the wrapping div around the fields
-// To make such wrapping fields use #prefix and #suffix
-// the first and last field to be floated like the following 
-// Thes line has to be placed in a hook_form_alter in a custom module
-// $form['field_edi_user_prenom'][0]['#prefix'] = '<div class="ia_fields_group">';
-// $form['field_edi_user_nom'][0]['#suffix'] = '</div>';
-
-// $margin-right : Margin between two fields
-// $field-width: define explicitly the width of the field to prevent long description to break the floating appearance 
-@mixin ia_fields_float($margin-right: 20px , $desc-max-width: 200px) {
-  //@include ia_wrap_float;
-  // to do provide IE support as described in http://www.alsacreations.com/article/lire/1209-display-inline-block.html
-  div.form-item {
-    display: inline-block;
-    margin-right: $margin-right;
-    // Allow the field to be always aligned vertically
-    vertical-align: top;
-
-  }
-  div.description {
-    display: block;
-    // Allow to give a maximum width when in situation where the field has small width
-    // todo would like to avoid description with bigger width than the field
-    // As they are siblings don't know how to do that 
-    max-width: $desc-max-width;
-  }
-  
-}
-
-
-
-
-
-
-// THE DRUPAL TABLES
-
-// table le tableau 
-// thead l'entête
-// tbody le corps du tableau
-// tr la ligne
-// td la cellule de corps de tableau 
-// th la cellule de fond de tableau
-
-
-// Table of numeric data
-// This table should be applied to a <table> element 
-// $back-col : Base Color of the background of the line of a table cell
-// It's the lighter color, a odd background color will be calculated from this color 
-@mixin ia-table-admi($back-col:$ia-table-back-col, $tx-size: $ia-tx-norm) {
-  table-layout: fixed;
-  th {
-    padding: $tx-size*0.6;
-  }
-  td {
-    // borders are of the color of background (white by default)
-    border: solid 1px $ia-col-back;
-  }
-  th, td { text-align: center; }
-  // Even row of the table
-  tr.even { background: $back-col; }
-  // Odd row of the table
-  tr.odd { background: darken($back-col,3%) }
-  
-  // A selectable row (VBO) 
-  // Without width, it expand too much
-  thead tr th.select {
-    width: $tx-size*4;
-    // The select list to select the rows
-    select {
-      margin: 0;
-      padding: 0;
-      position: relative;
-      right: $tx-size;
-      top: $tx-size*1.5;
-    }
-  }
-  // Actions select list provided by view bulk operation
-  .views-bulk-operations-select fieldset {
-    border: 0;
-  }
-}
-
-
-// THE DRUPAL STANDARD ADMIN VIEWS
-// 
-// To apply this mixin just add to the view the class ia-view-admi
-//  Exemple : .ia-view-admi { @include ia-view-admi; }
-//  .view : The view container
-//  .view-header : The header of the view
-//  .view-content : The content of the view
-
-@mixin ia-view-admi($tx-size: $ia-tx-norm) {
-  .view-header {
-    padding: $ia-tx-norm*0.8 0;
-    // Link in header are a bigger, because they 
-    a {
-      font-size: $ia-tx-norm*1.2;
-    }
-  }
-  .view-content {
-    // When the view use a table 
-    // View Bulk Operation or table display 
-    // It use ia-table-admi mixin
-    table {
-      @include ia-table-admi;
-    } 
-  }
-}
 
 
 // List of menu item 
