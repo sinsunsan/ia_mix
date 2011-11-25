@@ -26,7 +26,7 @@
   $tab-active-tx-color: false , // Only set when need to override default a style
   $tab-active-tx-style: false , // a font one line list of properties
   
-    
+  $tabs-separator: 5px , // width between each tabs 
   $tabs-border: solid 1px $ia-col-gris-light , // The border style of the inactive tabs
   $tabs-background: $ia-col-gris-lighter , // The background style of the inactive tabs
   $tabs-tx-color: false , // Only set when need to override default a style
@@ -60,18 +60,20 @@
       list-style-type: none;
       
       margin: 0;
-      margin-right: 0.5em;
       padding:0;
-       
+      
+      // width between each tab
+      @if ($float == 'left') { margin-right: $tabs-separator; }
+      @if ($float == 'right') { margin-left: $tabs-separator; }
       
       // All tabs (including the active one) 
       & a {
         background: $tabs-background;
         @if ($tabs-tx-color) { color: $tabs-tx-color; }
+        @if ($tabs-tx-style) { color: $tabs-tx-style; }
         
         @include border-top-radius($tabs-radius);
         float: $float;
-        font-size: $tx-size;
         margin: 0;
         padding: $tx-size/1.5;
       } 
@@ -85,7 +87,7 @@
         
         // border-bottom: solid 1px $col-blanc;
         @if ($tab-active-tx-color) { color: $tab-active-tx-color; }
-                
+        @if ($tab-active-tx-style) { color: $tab-active-tx-style; }
         padding: $tx-size/1,5 !important; 
       }
     }  
