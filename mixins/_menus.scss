@@ -1,0 +1,136 @@
+// This file is part of ia_mix suite
+// http://github.com/sinsunsan/ia_mix
+
+
+// Drop down menu based on the nice menu module
+//
+// To be applied on a nice menu block 
+// #block-nice_menus-1 { @include ia-menu-nicemenu(); }
+
+@mixin ia-menu-nicemenu (
+
+  // General properties
+  $tx-size: $ia-tx-norm , // Gloabal text Size  of the text
+  $border: none, // General border settings 
+  $background: none,  // Background
+  $background-hover: false,  // Background hovered
+  
+  $float: right , // Is menu align to right or to left
+  $tx-style: false, // The text style
+  $tx-color-hover: false, // The text color hovered
+  $tx-style-hover: false, // The text style hovered
+   
+  // Properties of the parent menu elements
+  $parent-menu-background: white,  // Background 
+  $parent-menu-border: none, // Border
+  $parent-menu-radius: false, // Radius
+  
+  $parent-menu-tx-style: false, // Font style
+  $parent-menu-tx-color: false, // Text color
+  
+  // Properties of the hovered parent menu elements
+  $parent-menu-background-hover: false,  // Background 
+  $parent-menu-border-hover: false, // Border
+  
+  $parent-menu-tx-style-hover: false, // Font style
+  $parent-menu-tx-color-hover: false, // Text color
+
+  // Properties of the child menu elements
+  $child-menu-background: false, // Background 
+  $child-menu-radius: false, // Radius
+  $child-menu-border: none, // Border
+  
+  $child-menu-tx-style: false,  // Font style
+  $child-menu-tx-color: false // Text color
+) {
+  float: $float;
+  
+  // The title of the menu block is hidden
+  h2 {display: none;}
+  
+  ul.nice-menu-right,
+  ul.nice-menu-down {
+    //overflow: hidden;
+  
+  border: none;
+  background: none;
+  float: none;
+  display: inline-block;
+  list-style-type: none;
+  list-style-image: none;
+  
+  // Global settings for both parent and child elements
+  // Will be overriden by more specific element
+  //margin-top: 20px;
+  padding: $tx-size * 0.3;
+    ul {
+      // Solve a position problem
+      //top: $tx-size * 2.4;
+    }
+    li {
+        border: $border;
+        background: $background;
+        
+        &:hover {
+          @if ($background-hover) { background: $background-hover; }
+          & > a {
+            @if ($tx-style-hover) { font: $tx-style-hover; }
+            @if ($tx-color-hover) { color: $tx-color-hover; }
+          }
+        }
+        min-height: $tx-size * 1.5;
+        float: left;
+        // Don't set the padding at the li level it break the layout 
+        // Set it at the a level instead
+        a {
+          background: none;
+          font-size: $tx-size;
+          padding: $tx-size * 0.8;
+          @if ($tx-style) { font: $tx-style; }
+          &:hover {
+            @if ($tx-style-hover) { font: $tx-style-hover; }
+            @if ($tx-color-hover) { color: $tx-color-hover; }
+            
+          }
+        }
+      }      
+    }
+    
+    
+    // Styling of the parent menus (the first ul > li)
+    // Sub menu have also a menuparent class
+    // For that we target only top level menu by using the > selector
+    &>li.menuparent {
+      @if ($parent-menu-background) { background: $parent-menu-background; }
+      @if ($parent-menu-border) { background: $parent-menu-border; }
+      @if ($parent-menu-radius) { @include border-radius($parent-menu-radius) };
+      // Properties of the hovered parent menu item
+      &:hover {
+        @if ($parent-menu-background-hover) { background: $parent-menu-background-hover; }
+        @if ($parent-menu-border-hover) { background: $parent-menu-border-hover; }
+          a {
+            @if ($parent-menu-tx-style-hover) { font: $parent-menu-tx-style-hover; }
+            @if ($parent-menu-tx-color-hover) { color: $parent-menu-tx-color-hover; }
+            
+          }
+        }
+      }
+    
+    // Other li (child elements)
+    &>li.menuparent ul li {
+      @if ($child-menu-background) { background: $child-menu-background; }
+      @if ($child-menu-radius) { @include border-radius($child-menu-radius) };
+      @if ($child-menu-border) { border: $child-menu-border; }
+      &:hover {
+      }  
+        
+ 
+      
+      a {
+        font-size: $tx-size;
+        padding: $tx-size*1;
+        &:hover {
+        }
+      }
+    }
+}
