@@ -11,10 +11,19 @@
 // - Argument of the function that exist only in mixin scope are not prefixed
 
 
+// Set the width of an element to fit inside a specific number of grid division
+@mixin ia-width (
+  $grid_nb , // Nb of grid division to set the width
+  $grid-column-width: $ia-grid-column-width ,  
+  $grid-gutter-width: $ia-grid-gutter-width
+) {
+  width: ($grid_nb * $grid-column-width) + ($grid-gutter-width * ($grid_nb - 1));
+}
+
 
 // Make a empty div with a background images
 // This could be used for headers with big image
-@mixin ia_empty_div($height, $src) {
+@mixin ia-empty-div($height, $src) {
   background-image: url($src);
   background-repeat: no-repeat;
   height: $height;
@@ -22,14 +31,14 @@
 
 
 // Make a float cell to constitute fluid grid
-@mixin ia_cell_float($width, $margin:$ia-marg-norm) {
+@mixin ia-cell-float($width, $margin:$ia-marg-norm) {
   margin: $margin;
   width: $width;
 }
 
 
 //Standard bottom separator between element
-@mixin ia_separator($color: $ia-line-col, $margin: $ia-marg-norm , $line-style: $ia-line-style) {
+@mixin ia-separator($color: $ia-line-col, $margin: $ia-marg-norm , $line-style: $ia-line-style) {
   border-bottom: $line-style 1px $color;
   margin-bottom: $margin;
   padding-bottom: $margin;
@@ -39,7 +48,11 @@
 
 // Simple link without background
 // Should be applied on div that containe input, a
-@mixin ia-link($tx-size:$ia-tx-norm, $col-link: $ia-col-tx-link , $col-link-hover: $ia-col-tx-link-hover) {
+@mixin ia-link(
+  $tx-size:$ia-tx-norm,
+  $col-link: $ia-col-tx-link ,
+  $col-link-hover: $ia-col-tx-link-hover
+) {
   input[type="submit"], 
   input[type="submit"].form-submit {
     background: none;
@@ -49,16 +62,6 @@
       color: $col-link-hover;
     }
   }
-}
-
-// Form field style in drupal 
-// $tx-col: Color of the text
-// $tx-size: Size of the text
-// $tx-weight: Weight of the text
-@mixin ia_field_label ($tx-col: $ia-col-tx-main, $tx-size: $ia-tx-norm, $tx-weight: normal) {
-  color: $tx-col;
-  font-size: $tx-size;
-  font-weight: $tx-weight;
 }
 
 

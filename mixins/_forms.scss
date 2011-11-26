@@ -1,0 +1,37 @@
+// This file is part of ia_mix suite
+// http://github.com/sinsunsan/ia_mix
+
+
+// Set the style of form input text element 
+// As found in drupal node form
+//
+// Sould be applyed to a form item container
+// .form-item { @include ia-form-field-input }
+@mixin ia-form-input-text (
+  $tx-size: $ia-tx-norm,
+  $grid-nb: false,
+  $width: false,
+  $border: solid 1px $ia-col-gris-light
+) {
+  height: 1.5 * $tx-size;
+  // Both system of width are accepted
+  @if ($width){ width: $width; }
+  @if ($grid-nb){ @include ia-width($grid-nb) }
+  
+}
+
+
+// Form field style in drupal 
+// $tx-col: Color of the text
+// $tx-size: Size of the text
+// $tx-weight: Weight of the text
+@mixin ia-field-label (
+  $tx-col: $ia-col-tx-main,
+  $tx-size: $ia-tx-norm,
+  $tx-weight: normal
+) {
+  color: $tx-col;
+  font-size: $tx-size;
+  font-weight: $tx-weight;
+}
+

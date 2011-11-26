@@ -72,7 +72,8 @@ classes that can be reused : the classes need to be present in the HTML
 or inherited through the @extend syntax
 
 Mixins -> 
-mixin that can be applyied to a selector through the @include syntax
+- mixin that can be applyied to a selector through the @include syntax
+- mixin name are separated by -
 
 Variables : 
 - The variable parts ar separated by - (eg: $ia-col-back)
@@ -81,6 +82,8 @@ Variables :
 Variable inside mixins : 
 - The variables inside mixin should where possible reuse css syntax, like $font-size
 - A default value should be provided
+
+
 
 
 

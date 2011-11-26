@@ -3,7 +3,7 @@
 
 
 //Buttons
-@mixin ia_button(
+@mixin ia-button(
   $tx-size: $ia-tx-norm , // Size of the text
   $tx-col: $ia-button-tx-col , // Color of the text 
   $tx-col-hover: $ia-button-tx-col-hover , // Color of the text hovered
