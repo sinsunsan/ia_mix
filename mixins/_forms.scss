@@ -17,8 +17,20 @@
   // Both system of width are accepted
   @if ($width){ width: $width; }
   @if ($grid-nb){ @include ia-width($grid-nb) }
-  
 }
+
+// Should be applyed in the field container 
+// .form-item-radios { @include ia-form-radio }
+@mixin ia-form-radio (
+  $label-color: $ia-col-gris-light // Color of the text of the label
+) {
+  // Each radio button is wrapped in a .form-item div
+  .form-item {
+    margin: 0;
+    padding: 0;
+  }
+}
+
 
 
 // Form field style in drupal 
