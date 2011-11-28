@@ -1,0 +1,39 @@
+// This file is part of ia_mix suite
+// http://github.com/sinsunsan/ia_mix
+
+
+// Drupal search block designed in a mac/safari fashion
+@mixin ia-block-search-style-mac(
+  $border: 1px solid #ccc, 
+  $background: white image-url('search.png') right center no-repeat,
+  $font: false,
+  $font-size: $ia-tx-norm,
+  $padding: 2px 8px 2px 20px,
+  $radius: 100px, 
+  $width: 180px
+) {
+  
+  @include ia-block-search(
+    $background: $background,
+    $border: $border,
+    $font-size: $font-size,
+    $padding: $padding,
+    $radius: $radius,
+    $width: $width
+  );
+  // The following properties are non overridable
+  // But could be latter if integrated in the base mixin
+  border-top-color: #999;
+  border-left-color: #b0b0b0;
+  border-right-color: #bbb;
+  @include box-shadow(rgba(black, 0.2), 0, 1px, 0, inset);
+}
+
+
+
+// When used on a wrapping div wrapping several cck fields those fields will float
+.ia_fields_group {
+  @include ia_fields_float();
+}
+
+

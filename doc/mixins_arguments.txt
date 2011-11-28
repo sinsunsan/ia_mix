@@ -1,0 +1,21 @@
+// This file is part of ia_mix suite
+// http://github.com/sinsunsan/ia_mix
+
+
+Liste of the arguments name
+
+
+Standard CSS
+------------
+$color
+$font
+$font-size
+
+
+
+Non standard
+------------
+$color-hover :    Color of the text when the element is hovered
+$radius :         Radius of the rounded corner
+$width-grid :     Width in nb of grid element
+$height-grid :    Height in nb of grid element

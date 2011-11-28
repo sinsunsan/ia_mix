@@ -1,0 +1,31 @@
+// This file is part of ia_mix suite
+// http://github.com/sinsunsan/ia_mix
+
+
+@mixin ia-block-search (
+  $border: false, 
+  $background: false,
+  $font: false,
+  $font-size: $ia-tx-norm,
+  $padding: false,
+  $radius: false, 
+  $width: false
+){
+  h2,
+  label {
+      display: none;
+  }
+  input[type="text"] {
+    @if($background){background: $background;}
+    @if($border){border: $border;}
+    @if($font){font: $font;}
+    @if($padding){ padding: $padding; }
+    @if($width){ width: $width; }
+    @if($radius){ @include border-radius($radius); }
+  }
+  // The submit button
+  input[type="submit"] {
+    display: none;
+  }
+ 
+}

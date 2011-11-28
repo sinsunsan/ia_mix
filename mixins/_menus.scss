@@ -17,7 +17,7 @@
   
   $float: right , // Is menu align to right or to left
   $tx-style: false, // The text style
-  $coloror-hover: false, // The text color hovered
+  $color-hover: false, // The text color hovered
   $tx-style-hover: false, // The text style hovered
    
   // Properties of the parent menu elements
@@ -75,7 +75,7 @@
           @if ($background-hover) { background: $background-hover; }
           & > a {
             @if ($tx-style-hover) { font: $tx-style-hover; }
-            @if ($coloror-hover) { color: $coloror-hover; }
+            @if ($color-hover) { color: $color-hover; }
           }
         }
         min-height: $font-size * 1.5;
@@ -89,7 +89,7 @@
           @if ($tx-style) { font: $tx-style; }
           &:hover {
             @if ($tx-style-hover) { font: $tx-style-hover; }
-            @if ($coloror-hover) { color: $coloror-hover; }
+            @if ($color-hover) { color: $color-hover; }
             
           }
         }

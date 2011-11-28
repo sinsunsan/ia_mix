@@ -11,44 +11,6 @@
 // - For this reason we use the /**/ comment style in order the final css stylesheet class be commented
 
 
-/* Style of the text of label field */
-.ia-drupal-field-label {
-  @include ia_field_label(
-    $font-size: $ia-tx-norm ,
-    $font-weight: bold ,
-    $color: $ia-col-tx-main);
-}
-
-.ia-drupal-form-description {
-  color: $ia-col-tx-main;
-  font-size: $ia-tx-note;
-  line-height:$ia-tx-note*1.5;
-  // No right padding to be align with the field
-  padding: $ia-tx-note 0;
-}
-
-
-/* Drupal buttons */
-
-.ia-button {
-  @include ia-button($font-size: $ia-tx-norm)
-}
-
-.ia-button-big {
-  @include ia-button($font-size: $ia-tx-title, $radius: 20px);
-}
-.ia-button-light {
-  @include ia-button($font-size: $ia-tx-norm, $radius: 10px);
-}
-
-/* Drupal fields */
-
-.ia-field-norm {
-  height: $ia-drupal-field-height-norm;
-}
-.ia-field-big {
-  height: $ia-drupal-field-height-big;
-}
 
 .ia-fieldset-simple {
   border: dotted 1px $ia-line-col;
@@ -61,11 +23,6 @@
   
 }
 
-// When used on a wrapping div wrapping several cck fields those fields will float
-.ia_fields_group {
-  @include ia_fields_float();
-}
-
 
 .ia-para {
   margin-bottom: 2em;
@@ -76,8 +33,6 @@
 .ia-view-admi {
   @include ia-view-admi;
 }
-
-
 
 
 // Standard IA title style
@@ -100,3 +55,8 @@
 .ia-title4 {
   @include ia-tx-size($ia-tx-m);
 }
+
+
+
+
+

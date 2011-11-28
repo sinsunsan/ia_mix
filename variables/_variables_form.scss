@@ -1,0 +1,14 @@
+// @file part of ia_mix suite
+// http://github.com/sinsunsan/ia_mix
+
+
+// Background of the input text and text area
+//$ia-form-input-background:            $ia-col-gris-lighter;
+$ia-form-input-background:              transparent;
+$ia-form-input-border:                  solid 1px $grayLight;
+
+$ia-form-field-xl:                      ia-grid(8);
+$ia-form-field-l:                       ia-grid(6);
+$ia-form-field-m:                       ia-grid(4);
+$ia-form-field-s:                       ia-grid(2);
+      

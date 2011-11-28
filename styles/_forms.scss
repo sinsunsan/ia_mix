@@ -1,0 +1,60 @@
+// This file is part of ia_mix suite
+// http://github.com/sinsunsan/ia_mix
+
+
+@mixin ia-style-input-text (
+  $width: 6
+) {
+  @include ia-form-input-text(
+    $border: $ia-form-input-border,
+    $font-size: $ia-tx-norm,
+    $radius: 4px,
+    $width: ia-grid($width)
+  )
+}
+
+
+
+@mixin ia-style-input-text-area (
+  $width:  6
+) {
+  @include ia-form-text-area(
+    $border: $ia-form-input-border,
+    $font-size: $ia-tx-norm,
+    $radius: 4px,
+    $width: ia-grid($width)
+  ); 
+}
+
+@mixin ia-input-file() {
+  @extend .ia-button-light;
+  
+}
+
+
+// Drupal fields
+
+.ia-field-norm {
+  height: $ia-drupal-field-height-norm;
+}
+.ia-field-big {
+  height: $ia-drupal-field-height-big;
+}
+
+
+// Style of the text of label field
+.ia-drupal-field-label {
+  @include ia_field_label(
+    $font-size: $ia-tx-norm ,
+    $font-weight: bold ,
+    $color: $ia-col-tx-main);
+}
+
+.ia-drupal-form-description {
+  color: $ia-col-tx-main;
+  font-size: $ia-tx-note;
+  line-height:$ia-tx-note*1.5;
+  // No right padding to be align with the field
+  padding: $ia-tx-note 0;
+}
+

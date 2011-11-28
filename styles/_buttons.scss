@@ -1,0 +1,33 @@
+// This file is part of ia_mix suite
+// http://github.com/sinsunsan/ia_mix
+
+// Drupal buttons
+
+.ia-button {
+  @include ia-button($font-size: $ia-tx-norm)
+}
+
+.ia-button-big {
+  @include ia-button($font-size: $ia-tx-title, $radius: 20px);
+}
+.ia-button-light {
+  @include ia-button($font-size: $ia-tx-norm, $radius: 10px);
+}
+
+
+// Twitter button using twitter bootstrap
+@mixin ia-button-twitter(
+  $background-color: false,
+  $color: false
+) {
+  @extend .btn;
+  @if ($background-color){
+    @if ($color){
+      &,
+      &:hover {
+        color: $color; 
+      }
+    }
+    @include gradientBar($background-color, darken($background-color,20%));
+  }
+}

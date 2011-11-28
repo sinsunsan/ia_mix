@@ -1,6 +1,11 @@
 // This file is part of ia_mix suite
 // http://github.com/sinsunsan/ia_mix
 
+// Settings common to all fields
+@mixin ia-form-input-fields(){
+  // Settings directly form twitter bootstrap
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
 
 // Set the style of form input text element 
 // As found in drupal node form
@@ -8,34 +13,43 @@
 // Sould be applyed to a form item container
 // .form-item { @include ia-form-field-input }
 @mixin ia-form-input-text (
+  $background: $ia-form-input-background,
+  $border: false,
   $font-size: $ia-tx-norm,
+  $radius: false,
   $width-grid: false,
   $width: false,
   $border: solid 1px $ia-col-gris-light
-) {
-  
-    height: 1.1 * $font-size;
+) {    
     // Both system of width are accepted
-    @if ($width){ width: $width; }
-    @if ($width-grid){ @include ia-width($width-grid) } 
+    // Cause of of bug of interpretation (don't change {  position })
+    input[type="text"]
+    {
+      @if ($background){ background: $background; } 
+      height: 1.5 * $font-size;
+      @if ($border){ border: $border; }
+      @if ($radius){@include border-radius($radius);}
+      @if ($width){ width: $width; }
+      @if ($width-grid){ @include ia-width($width-grid) }
+      
+      @include ia-form-input-fields;
+    }
+
 }
-
-
 
 // Should be applyed in the field container 
 // .form-item-textarea { @include ia-form-text-area }
 @mixin ia-form-text-area(
-  $width: false, // Width
-  $width-grid: false, // Width in grid division
-  
-  $height: false, // Height
-  $height-grid: false, // Height in grid division
-  
+  $background: $ia-form-input-background,
   $border: false, // Border
-  
-  $padding: false, // Padding
+  $font-size: false, // 
+  $height: false, // Height
+  $height-grid: false, // Height in grid division  
   $margin: false, // Margin
-  $font-size: false // 
+  $radius: false,
+  $padding: false, // Padding
+  $width: false, // Width
+  $width-grid: false // Width in grid division
 ) {
   
   
@@ -44,15 +58,18 @@
   
   // Texte area field
   .resizable-textarea {
+    @if ($font-size){ font-size: $font-size; }
+    @if ($height){ height: $width; }
+    @if ($height-grid){width: ia-grid($width-grid) }  
     @if ($width){ width: $width; } 
     @if ($width-grid){ width: ia-grid($width-grid) }
-
-    @if ($height){ height: $width; }
-    @if ($height-grid){width: ia-grid($width-grid) }
-
-    @if ($border){ border: $border; }
-    
-    @if ($font-size){ font-size: $font-size; }
+    textarea {
+      @if ($background){ background: $background; } 
+      @if ($border){ border: $border; }  
+      @if ($radius){@include border-radius($radius);}
+      
+    }
+    @include ia-form-input-fields;
   }
   // Help text below
   .description {
@@ -61,6 +78,39 @@
   }
   
 }
+
+
+
+@mixin ia-form-file-field (
+  $background: $ia-form-input-background,
+  $border: none,
+  $font-size: $ia-tx-norm,
+  $radius: false,
+  $width: false,
+  $width-grid: false  
+) {
+  
+  
+    // Both system of width are accepted
+    // Cause of of bug of interpretation (don't change {  position })
+    input[type="file"]
+    {
+      @if ($background){ background: $background; } 
+      height: 1.5 * $font-size;
+      @if ($border){ border: $border; }
+      @if ($radius){@include border-radius($radius);}
+      @if ($width){ width: $width; }
+      @if ($width-grid){ @include ia-width($width-grid) }
+    }
+    input[type="submit"]
+    {
+      display: none;
+    }
+
+}
+
+
+
 // Multiple node reference widget
 @mixin ia-form-nodereference (
   $font-size: $ia-tx-norm,
@@ -68,6 +118,8 @@
   $width-grid: 4,
   $border: solid 1px $ia-col-gris-light
 ) {
+  
+  
   $noderelationship-width: 52px;
   $drag-width: 25px;
   $total-width: ia-grid(4);
@@ -163,4 +215,6 @@
   font-size: $font-size;
   font-weight: $font-weight;
 }
+
+
 

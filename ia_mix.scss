@@ -13,18 +13,17 @@
 // https://github.com/jlong/sass-twitter-bootstrap
 // Original version in LESS
 // http://twitter.github.com/bootstrap/
-//@import "sass-twitter-bootstrap/lib/bootstrap.scss";
-//@import "sass-twitter-bootstrap/lib/variables.scss";
+@import "twitter/twitter_bootstrap.scss";
 
 
 // VARIABLES
-@import "variables/ia_variables";
+@import "variables/_ia_variables";
 
 // MIXINS
-@import "mixins/ia_mixins";
+@import "mixins/_ia_mixins";
 
 // STYLES
-@import "styles/ia_styles";
+@import "styles/_ia_styles";
 
 
 

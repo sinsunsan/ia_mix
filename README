@@ -79,14 +79,8 @@ Mixins arguments name :
 - arguments of the mixins are composed of the following sub element 
 - Sub Element to be styled (ex title in a field element)
 - name of the css property to be sent
-Eg 
-$title-font 
-$title-color
-$title-border
 
-Adding argument names to css standard : 
-$width-grid : Width in nb of grid element
-$height-grid : Height in nb of grid element
+The liste of available arguments are in DOC/mixin_arguments.txt
 
 
 Variables : 
