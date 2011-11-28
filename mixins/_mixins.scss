@@ -21,6 +21,7 @@
 }
 
 
+
 // Make a empty div with a background images
 // This could be used for headers with big image
 @mixin ia-empty-div($height, $src) {
@@ -49,7 +50,7 @@
 // Simple link without background
 // Should be applied on div that containe input, a
 @mixin ia-link(
-  $tx-size:$ia-tx-norm,
+  $font-size:$ia-tx-norm,
   $col-link: $ia-col-tx-link ,
   $col-link-hover: $ia-col-tx-link-hover
 ) {
@@ -70,11 +71,11 @@
 // List of menu item 
 // the menu item are positionned vertically
 // To be applied on a menu block
-@mixin ia-menu-block($float: left , $tx-size: $ia-tx-norm) {
+@mixin ia-menu-block($float: left , $font-size: $ia-tx-norm) {
   // The containing block
   & {
     float: $float;
-    margin: $tx-size;
+    margin: $font-size;
   }
   ul.menu {
     li a {

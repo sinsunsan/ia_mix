@@ -1,0 +1,13 @@
+// This file is part of ia_mix suite
+// http://github.com/sinsunsan/ia_mix
+
+
+// @return the size in pixel of the grid
+@function ia-grid(
+  $grid_nb , // Nb of grid division to set the width
+  $grid-column-width: $ia-grid-column-width ,  
+  $grid-gutter-width: $ia-grid-gutter-width
+) {
+  @return ($grid_nb * $grid-column-width) + ($grid-gutter-width * ($grid_nb - 1));
+}
+

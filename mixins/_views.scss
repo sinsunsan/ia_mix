@@ -9,7 +9,7 @@
 //  .view-header : The header of the view
 //  .view-content : The content of the view
 
-@mixin ia-view-admi($tx-size: $ia-tx-norm) {
+@mixin ia-view-admi($font-size: $ia-tx-norm) {
   .view-header {
     padding: $ia-tx-norm*0.8 0;
     // Link in header are a bigger, because they 

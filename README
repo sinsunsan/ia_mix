@@ -67,13 +67,27 @@ STANDARDISATION
 
 Directory of scss files 
 
-Styles -> 
+Styles : 
 classes that can be reused : the classes need to be present in the HTML 
 or inherited through the @extend syntax
 
-Mixins -> 
+Mixins : 
 - mixin that can be applyied to a selector through the @include syntax
 - mixin name are separated by -
+
+Mixins arguments name :
+- arguments of the mixins are composed of the following sub element 
+- Sub Element to be styled (ex title in a field element)
+- name of the css property to be sent
+Eg 
+$title-font 
+$title-color
+$title-border
+
+Adding argument names to css standard : 
+$width-grid : Width in nb of grid element
+$height-grid : Height in nb of grid element
+
 
 Variables : 
 - The variable parts ar separated by - (eg: $ia-col-back)

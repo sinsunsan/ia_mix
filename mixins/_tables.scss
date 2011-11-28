@@ -8,7 +8,7 @@
 // To be applied on a <table> element table { @include ia-table-admi; }
 @mixin ia-table-admi(
   $back-col: $ia-table-back-col , // Base Color of the background of the line of a table cell
-  $tx-size: $ia-tx-norm
+  $font-size: $ia-tx-norm
 ) {
   
   // TABLE HTML Elements
@@ -22,7 +22,7 @@
   
   table-layout: fixed;
   th {
-    padding: $tx-size*0.6;
+    padding: $font-size*0.6;
   }
   td {
     // borders are of the color of background (white by default)
@@ -37,14 +37,14 @@
   // A selectable row (VBO) 
   // Without width, it expand too much
   thead tr th.select {
-    width: $tx-size*4;
+    width: $font-size*4;
     // The select list to select the rows
     select {
       margin: 0;
       padding: 0;
       position: relative;
-      right: $tx-size;
-      top: $tx-size*1.5;
+      right: $font-size;
+      top: $font-size*1.5;
     }
   }
   // Actions select list provided by view bulk operation

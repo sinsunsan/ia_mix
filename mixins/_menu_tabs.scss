@@ -11,7 +11,7 @@
 // #quicktabs-edi_og_tabs {@include ia-menu-tabs}
 
 @mixin ia-menu-tabs(
-  $tx-size: 12px , // Text height from which is calculated margin and paddings
+  $font-size: 12px , // Text height from which is calculated margin and paddings
   $float: left , // If the tabs are aligned to left of to right
   
   $class: 'qt_tab' , //the classes of ul in order to override drupal more specific standard css
@@ -47,7 +47,7 @@
     border-bottom: $container-border;
     height: 100%;
     
-    margin-top: 1.2*$tx-size;
+    margin-top: 1.2*$font-size;
     overflow: hidden;
     padding: 0;
     width: 100%;
@@ -75,7 +75,7 @@
         @include border-top-radius($tabs-radius);
         float: $float;
         margin: 0;
-        padding: $tx-size/1.5;
+        padding: $font-size/1.5;
       } 
        
       // The only active tag
@@ -88,7 +88,7 @@
         // border-bottom: solid 1px $col-blanc;
         @if ($tab-active-tx-color) { color: $tab-active-tx-color; }
         @if ($tab-active-tx-style) { color: $tab-active-tx-style; }
-        padding: $tx-size/1,5 !important; 
+        padding: $font-size/1,5 !important; 
       }
     }  
   }

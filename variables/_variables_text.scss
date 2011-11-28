@@ -23,6 +23,7 @@ $ia-tx-note:                $ia-tx-s; // Small text used in notes for example
 // Typographic variables
 $ia-tx-line-height-factor:  1.5; // coef between font-size and line height
 
+$ia-tx-font-family: Arial, Helvetica, sans-serif;
 
 // Style of text
 
@@ -61,8 +62,9 @@ $ia-tx-style-link: normal normal $ia-tx-norm/$ia-tx-norm * $ia-tx-line-height-fa
 // Hover link are generally different only by the color
 $ia-tx-style-link-hover: $ia-tx-style-link;
 
-$ia-tx-style-norm: normal normal $ia-tx-norm/$ia-tx-norm * $ia-tx-line-height-factor;
-$ia-tx-style-note: normal normal $ia-tx-note/$ia-tx-note * $ia-tx-line-height-factor;
-$ia-tx-style-big: normal normal $ia-tx-big/$ia-tx-big * $ia-tx-line-height-factor;
+// Definition of text style the font familly is necessary
+$ia-tx-style-norm:  #{$ia-tx-norm}/#{($ia-tx-norm * $ia-tx-line-height-factor)} $ia-tx-font-family;
+$ia-tx-style-note:  #{$ia-tx-note}/#{($ia-tx-note * $ia-tx-line-height-factor)} $ia-tx-font-family;
+$ia-tx-style-big:  #{$ia-tx-big}/#{($ia-tx-big * $ia-tx-line-height-factor)} $ia-tx-font-family ;
 
 

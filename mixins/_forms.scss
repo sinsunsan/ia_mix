@@ -8,42 +8,159 @@
 // Sould be applyed to a form item container
 // .form-item { @include ia-form-field-input }
 @mixin ia-form-input-text (
-  $tx-size: $ia-tx-norm,
-  $grid-nb: false,
+  $font-size: $ia-tx-norm,
+  $width-grid: false,
   $width: false,
   $border: solid 1px $ia-col-gris-light
 ) {
-  height: 1.5 * $tx-size;
-  // Both system of width are accepted
-  @if ($width){ width: $width; }
-  @if ($grid-nb){ @include ia-width($grid-nb) }
+  
+    height: 1.1 * $font-size;
+    // Both system of width are accepted
+    @if ($width){ width: $width; }
+    @if ($width-grid){ @include ia-width($width-grid) } 
 }
+
+
+
+// Should be applyed in the field container 
+// .form-item-textarea { @include ia-form-text-area }
+@mixin ia-form-text-area(
+  $width: false, // Width
+  $width-grid: false, // Width in grid division
+  
+  $height: false, // Height
+  $height-grid: false, // Height in grid division
+  
+  $border: false, // Border
+  
+  $padding: false, // Padding
+  $margin: false, // Margin
+  $font-size: false // 
+) {
+  
+  
+  @if ($padding){ padding: $padding; }
+  @if ($margin){ padding: $margin; }
+  
+  // Texte area field
+  .resizable-textarea {
+    @if ($width){ width: $width; } 
+    @if ($width-grid){ width: ia-grid($width-grid) }
+
+    @if ($height){ height: $width; }
+    @if ($height-grid){width: ia-grid($width-grid) }
+
+    @if ($border){ border: $border; }
+    
+    @if ($font-size){ font-size: $font-size; }
+  }
+  // Help text below
+  .description {
+    @if ($width){ width: $width; }
+    @if ($width-grid){ width: ia-grid($width-grid) }
+  }
+  
+}
+// Multiple node reference widget
+@mixin ia-form-nodereference (
+  $font-size: $ia-tx-norm,
+  $width: false, // Width of the input text
+  $width-grid: 4,
+  $border: solid 1px $ia-col-gris-light
+) {
+  $noderelationship-width: 52px;
+  $drag-width: 25px;
+  $total-width: ia-grid(4);
+  @if ($width){ $total-width: $width-grid;}
+  @if ($width-grid){ $total-width: ia-grid($width-grid);}
+  
+  $input-width : $total-width - $drag-width - $noderelationship-width;
+  
+  table.content-multiple-table {
+    // Use exact pixel diemnsions
+    //table-layout: fixed;
+    
+    // The icon and the text field
+    td {
+      margin: 0;
+      padding: 0; 
+      width: auto;
+      input[type="text"] {
+        width: $input-width;
+      }
+    }
+    // The icon to change the order of the node reference fields
+    
+    td.content-multiple-drag {
+      //width: 20px;
+    }
+    
+  }
+  
+}
+
 
 // Should be applyed in the field container 
 // .form-item-radios { @include ia-form-radio }
 @mixin ia-form-radio (
-  $label-color: $ia-col-gris-light // Color of the text of the label
+  $title-color: false, // Color of the title of the field
+  $title-font: false, // Style of the title of the field
+  
+  $option-color: false, // Color of the options text
+  $option-font: false, // Style of the options text
+  
+  $help-color: false, // Color of the help text beneath the options
+  $help-font: false, // Style of the help text
+  
+  $width: false, // Width of the containing div
+  $width-grid: false, // Width of the containng div in grid unit
+  
+  $border: false // border style of the containing dic
 ) {
-  // Each radio button is wrapped in a .form-item div
-  .form-item {
+  @if ($width) { width: $width; }
+  @if ($width-grid){ @include ia-width($width-grid); }
+  @if ($border){ border: $border; }
+  
+  label {
+    @if ($title-color) { color: $title-color; }
+    @if ($title-font) { font: $title-font; }
+  }
+  .form-radios {
     margin: 0;
     padding: 0;
+  }
+  // Each radio button is wrapped in a .form-item div
+  .form-item.form-item-radio {
+    margin: 0;
+    padding: 0;
+    // text of the option along radio button
+    label {
+      @if ($option-color) { color: $option-color;}
+      @if ($option-font) { font: $option-font;}
+    }
+  }
+  // Description
+  .description {
+    margin: 5px;
+    padding: 0;
+    @if ($help-color) { color: $help-color; }
+    @if ($help-font) { font: $help-font; }
   }
 }
 
 
 
 // Form field style in drupal 
-// $tx-col: Color of the text
-// $tx-size: Size of the text
-// $tx-weight: Weight of the text
+// $color: Color of the text
+// $font-size: Size of the text
+// $font-weight: Weight of the text
 @mixin ia-field-label (
-  $tx-col: $ia-col-tx-main,
-  $tx-size: $ia-tx-norm,
-  $tx-weight: normal
+  $color: $ia-col-tx-main,
+  $font-size: $ia-tx-norm,
+  $font-weight: normal
 ) {
-  color: $tx-col;
-  font-size: $tx-size;
-  font-weight: $tx-weight;
+  color: $color;
+  font-size: $font-size;
+  font-weight: $font-weight;
 }
 

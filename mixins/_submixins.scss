@@ -16,8 +16,8 @@
 }
 
 // The line height depending of the height of the tex
-@mixin ia-baseline($tx-size) {
-  line-height: 1.5*$tx-size;
+@mixin ia-baseline($font-size) {
+  line-height: 1.5*$font-size;
 }
 
 
@@ -29,3 +29,26 @@ $line-height-factor:$ia-tx-line-height-factor) {
   font-size: $font-size;
   line-height: $font-size * $line-height-factor;
 }
+
+
+// Mixin to apply box properies in mixins 
+@mixin ia-style-box(
+  $width: false, 
+  $width-grid: false,
+  $height: false,
+  $height-grid: false,
+  $border: false,
+  $padding: false,
+  $margin: false
+){
+  @if ($width){ width: $width; }
+  @if ($width-grid){ @include ia-width($width-grid) }
+  
+  @if ($height){ height: $width; }
+  @if ($height-grid){ @include ia-height($height-grid) }
+  
+  @if ($border){ border: $border; }
+  
+  @if ($padding){ padding: $padding; }
+  @if ($margin){ padding: $margin; }
+}  

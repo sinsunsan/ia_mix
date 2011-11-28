@@ -10,14 +10,14 @@
 @mixin ia-menu-nicemenu (
 
   // General properties
-  $tx-size: $ia-tx-norm , // Gloabal text Size  of the text
+  $font-size: $ia-tx-norm , // Gloabal text Size  of the text
   $border: none, // General border settings 
   $background: none,  // Background
   $background-hover: false,  // Background hovered
   
   $float: right , // Is menu align to right or to left
   $tx-style: false, // The text style
-  $tx-color-hover: false, // The text color hovered
+  $coloror-hover: false, // The text color hovered
   $tx-style-hover: false, // The text style hovered
    
   // Properties of the parent menu elements
@@ -62,10 +62,10 @@
   // Global settings for both parent and child elements
   // Will be overriden by more specific element
   //margin-top: 20px;
-  padding: $tx-size * 0.3;
+  padding: $font-size * 0.3;
     ul {
       // Solve a position problem
-      //top: $tx-size * 2.4;
+      //top: $font-size * 2.4;
     }
     li {
         border: $border;
@@ -75,21 +75,21 @@
           @if ($background-hover) { background: $background-hover; }
           & > a {
             @if ($tx-style-hover) { font: $tx-style-hover; }
-            @if ($tx-color-hover) { color: $tx-color-hover; }
+            @if ($coloror-hover) { color: $coloror-hover; }
           }
         }
-        min-height: $tx-size * 1.5;
+        min-height: $font-size * 1.5;
         float: left;
         // Don't set the padding at the li level it break the layout 
         // Set it at the a level instead
         a {
           background: none;
-          font-size: $tx-size;
-          padding: $tx-size * 0.8;
+          font-size: $font-size;
+          padding: $font-size * 0.8;
           @if ($tx-style) { font: $tx-style; }
           &:hover {
             @if ($tx-style-hover) { font: $tx-style-hover; }
-            @if ($tx-color-hover) { color: $tx-color-hover; }
+            @if ($coloror-hover) { color: $coloror-hover; }
             
           }
         }
@@ -127,8 +127,8 @@
  
       
       a {
-        font-size: $tx-size;
-        padding: $tx-size*1;
+        font-size: $font-size;
+        padding: $font-size*1;
         &:hover {
         }
       }

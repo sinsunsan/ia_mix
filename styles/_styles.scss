@@ -13,7 +13,10 @@
 
 /* Style of the text of label field */
 .ia-drupal-field-label {
-  @include ia_field_label($tx-size: $ia-tx-norm , $tx-weight: bold , $tx-col: $ia-col-tx-main);
+  @include ia_field_label(
+    $font-size: $ia-tx-norm ,
+    $font-weight: bold ,
+    $color: $ia-col-tx-main);
 }
 
 .ia-drupal-form-description {
@@ -28,14 +31,14 @@
 /* Drupal buttons */
 
 .ia-button {
-  @include ia-button($tx-size: $ia-tx-norm)
+  @include ia-button($font-size: $ia-tx-norm)
 }
 
 .ia-button-big {
-  @include ia-button($tx-size: $ia-tx-title, $radius: 20px);
+  @include ia-button($font-size: $ia-tx-title, $radius: 20px);
 }
 .ia-button-light {
-  @include ia-button($tx-size: $ia-tx-norm, $radius: 10px);
+  @include ia-button($font-size: $ia-tx-norm, $radius: 10px);
 }
 
 /* Drupal fields */

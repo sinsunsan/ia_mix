@@ -4,9 +4,9 @@
 
 //Buttons
 @mixin ia-button(
-  $tx-size: $ia-tx-norm , // Size of the text
-  $tx-col: $ia-button-tx-col , // Color of the text 
-  $tx-col-hover: $ia-button-tx-col-hover , // Color of the text hovered
+  $font-size: $ia-tx-norm , // Size of the text
+  $color: $ia-button-tx-col , // Color of the text 
+  $color-hover: $ia-button-tx-col-hover , // Color of the text hovered
   $col-back: $ia-button-back-col , // Color of the background
   $ia-back-col-hover: $ia-button-back-col-hover , //Color of the hovered backgroun
   $border-col: $ia-button-border-col , // 
@@ -22,18 +22,18 @@
   border: $border-col 1px $border-type;
   @if $radius != 0 {@include border-radius($radius)};
   
-  color: $tx-col;
+  color: $color;
   cursor: pointer;
-  font-size: $tx-size;
+  font-size: $font-size;
   
-  //The margin and padding are dependent of $tx-size
-  margin: $tx-size;
-  padding: $tx-size/1.5 $tx-size;
+  //The margin and padding are dependent of $font-size
+  margin: $font-size;
+  padding: $font-size/1.5 $font-size;
   
   //float: left;
   // Hover state
     &:hover {
       background: $ia-back-col-hover;
-      color: $tx-col-hover;
+      color: $color-hover;
     }
 }
