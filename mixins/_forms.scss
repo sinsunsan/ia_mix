@@ -80,7 +80,8 @@
 }
 
 
-
+// This mixin sould be applied of the field element 
+// but this field don't ouput a class that specify it's type at the top level
 @mixin ia-form-file-field (
   $background: $ia-form-input-background,
   $border: none,
@@ -90,11 +91,14 @@
   $width-grid: false  
 ) {
   
+  ///.filefield-element {
+  //  margin-top: 0;
+  // We need to have always the type printed at the form-item top level
+  // To have a consistent handling a file independently of their type
   
     // Both system of width are accepted
     // Cause of of bug of interpretation (don't change {  position })
-    input[type="file"]
-    {
+    input[type="file"]{
       @if ($background){ background: $background; } 
       height: 1.5 * $font-size;
       @if ($border){ border: $border; }
@@ -102,11 +106,10 @@
       @if ($width){ width: $width; }
       @if ($width-grid){ @include ia-width($width-grid) }
     }
-    input[type="submit"]
-    {
+    input[type="submit"]{
       display: none;
-    }
-
+    
+  }
 }
 
 

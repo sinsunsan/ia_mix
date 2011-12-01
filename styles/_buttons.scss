@@ -16,11 +16,11 @@
 
 
 // Twitter button using twitter bootstrap
-@mixin ia-button-twitter(
+@mixin ia-style-button-twitter(
   $background-color: false,
   $color: false
 ) {
-  @extend .btn;
+  @include ia-button-twitter;
   @if ($background-color){
     @if ($color){
       &,

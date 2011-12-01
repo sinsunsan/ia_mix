@@ -40,3 +40,80 @@
 
 
 
+
+// From Twitter Bootstrap
+// This mixin is dependant on some of twitter mixin 
+
+// Base .btn styles
+@mixin ia-button-twitter {
+  // Button Base
+  cursor: pointer;
+  display: inline-block;
+  @include vertical-three-colors-gradient(#fff, #fff, 25%, darken(#fff, 10%));
+  padding: 5px 14px 6px;
+  text-shadow: 0 1px 1px rgba(255,255,255,.75);
+  color: #333;
+  font-size: $basefont;
+  line-height: normal;
+  border: 1px solid #ccc;
+  border-bottom-color: #bbb;
+  @include border-radius(4px);
+  $shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  @include box-shadow($shadow);
+
+  &:hover {
+    background-position: 0 -15px;
+    color: #333;
+    text-decoration: none;
+  }
+
+  // Focus state for keyboard and accessibility
+  &:focus {
+    outline: 1px dotted #666;
+  }
+
+  // Primary Button Type
+  &.primary {
+    color: $white;
+    @include gradientBar($blue, $blueDark);
+  }
+
+   // Transitions
+  @include transition(.1s linear all);
+
+  // Active and Disabled states
+  &.active,
+  &:active {
+    $shadow: inset 0 2px 4px rgba(0,0,0,.25), 0 1px 2px rgba(0,0,0,.05);
+    @include box-shadow($shadow);
+  }
+  &.disabled {
+    cursor: default;
+    background-image: none;
+    @include reset-filter();
+    @include opacity(65);
+    @include box-shadow(none);
+  }
+  &[disabled] {
+    // disabled pseudo can't be included with .disabled
+    // def because IE8 and below will drop it ;_;
+    cursor: default;
+    background-image: none;
+    @include reset-filter();
+    @include opacity(65);
+    @include box-shadow(none);
+  }
+
+  // Button Sizes
+  &.large {
+    font-size: $basefont + 2px;
+    line-height: normal;
+    padding: 9px 14px 9px;
+    @include border-radius(6px);
+  }
+  &.small {
+    padding: 7px 9px 7px;
+    font-size: $basefont - 2px;
+  }
+}
+

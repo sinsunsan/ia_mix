@@ -7,6 +7,15 @@
 $white:                         #FFF;
 $black:                         #000;
 
+// TWITTER Bootstrap
+// Grays
+$black:             #000;
+$grayDark:          lighten($black, 25%);
+$gray:              lighten($black, 50%);
+$grayLight:         lighten($black, 75%);
+$grayLighter:       lighten($black, 90%);
+$white:             #fff;
+
 
 $ia-col-tx:                   black; // Standard text color
 
