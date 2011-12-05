@@ -1,0 +1,12 @@
+// This file is part of ia_mix suite
+// http://github.com/sinsunsan/ia_mix
+
+// Define text style as a compound named style 
+// Similar to concept of styles in Indesign for example
+@mixin ia-text-style(
+  $font: false,
+  $color: false
+) {
+  @if ($font) { font: $font; }
+  @if ($color) { color: $color; }
+}

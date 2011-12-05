@@ -25,7 +25,6 @@
   $border: false,
   $font-size: $ia-tx-norm,
   $radius: false,
-  $width-grid: false,
   $width: false,
   $border: solid 1px $ia-col-gris-light
 ) {    
@@ -33,13 +32,11 @@
     // Cause of of bug of interpretation (don't change {  position })
     input[type="text"]
     {
-      @if ($background){ background: $background; } 
+      @include ia-background($background); 
       height: 1.5 * $font-size;
-      @if ($border){ border: $border; }
-      @if ($radius){@include border-radius($radius);}
-      @if ($width){ width: $width; }
-      @if ($width-grid){ @include ia-width($width-grid) }
-      
+      @include ia-border($border);
+      @include ia-radius($radius);
+      @include ia-width($width);      
       @include ia-form-input-fields;
     }
 
@@ -55,7 +52,6 @@
   $border: false,
   $font-size: $ia-tx-norm,
   $radius: false,
-  $width-grid: false,
   $width: false,
   $border: solid 1px $ia-col-gris-light
 ) {    
@@ -64,14 +60,12 @@
     select
     { 
       margin: 0;
-      @if ($background){ background: $background; } 
+      @include ia-background($background); 
       height: 1.5 * $font-size;
-      @if ($border){ border: $border; }
-      @if ($radius){@include border-radius($radius);}
-      @if ($width){ width: $width; }
-      @if ($width-grid){ @include ia-width($width-grid) }
-      
+      @include ia-border($border);
       @include ia-form-input-fields;
+      @include ia-radius($radius);
+      @include ia-width($width);
     }
 
 }
@@ -84,12 +78,10 @@
   $border: false, // Border
   $font-size: false, // 
   $height: false, // Height
-  $height-grid: false, // Height in grid division  
   $margin: false, // Margin
   $radius: false,
   $padding: false, // Padding
-  $width: false, // Width
-  $width-grid: false // Width in grid division
+  $width: false // Width
 ) {
   
   
@@ -98,15 +90,13 @@
   
   // Texte area field
   .resizable-textarea {
-    @if ($font-size){ font-size: $font-size; }
-    @if ($height){ height: $width; }
-    @if ($height-grid){width: ia-grid($width-grid) }  
-    @if ($width){ width: $width; } 
-    @if ($width-grid){ width: ia-grid($width-grid) }
+    @include ia-font-size($font-size);
+    @include ia-height($height);
+    @include ia-width($width); 
     textarea {
-      @if ($background){ background: $background; } 
-      @if ($border){ border: $border; }  
-      @if ($radius){@include border-radius($radius);}
+      @include ia-background($background); 
+      @include ia-border($border);
+      @include ia-radius($radius);
       
     }
     @include ia-form-input-fields;
@@ -117,8 +107,7 @@
     margin-right: 0;
     padding-left: 0;
     padding-right: 0;
-    @if ($width){ width: $width; }
-    @if ($width-grid){ width: ia-grid($width-grid) }
+    @include ia-width($width);
   }
   
 }
@@ -131,8 +120,7 @@
   $border: none,
   $font-size: $ia-tx-norm,
   $radius: false,
-  $width: false,
-  $width-grid: false  
+  $width: false
 ) {
   
   .widget-preview {
@@ -154,16 +142,20 @@
     // Both system of width are accepted
     // Cause of of bug of interpretation (don't change {  position })
     input[type="file"]{
-      @if ($background){ background: $background; } 
+      @include ia-background($background);
       height: 1.5 * $font-size;
-      @if ($border){ border: $border; }
-      @if ($radius){@include border-radius($radius);}
-      @if ($width){ width: $width; }
-      @if ($width-grid){ @include ia-width($width-grid) }
+      @include ia-border($border);
+      @include ia-radius($radius);
+      @include ia-width($width);
     }
+    // Button that allow to load the image before submitting the node
+    // When the image is loaded change to a remove button
+    // The problem when upload the image is that this button 
+    // should be activited automatically through javascript
+    // When the image is one depending off the cases 
+    // It's useful to have the button or not
     input[type="submit"]{
-      display: none;
-    
+      //display: none;
   }
 }
 
@@ -172,18 +164,14 @@
 // Multiple node reference widget
 @mixin ia-form-nodereference (
   $font-size: $ia-tx-norm,
-  $width: false, // Width of the input text
-  $width-grid: 4,
+  $width: ia-grid(4), // Width of the input text
   $border: solid 1px $ia-col-gris-light
 ) {
   
   
   $noderelationship-width: 52px;
   $drag-width: 25px;
-  $total-width: ia-grid(4);
-  @if ($width){ $total-width: $width-grid;}
-  @if ($width-grid){ $total-width: ia-grid($width-grid);}
-  
+  $total-width: ia-grid(4);  
   $input-width : $total-width - $drag-width - $noderelationship-width;
   
   table.content-multiple-table {
@@ -223,12 +211,10 @@
   $help-font: false, // Style of the help text
   
   $width: false, // Width of the containing div
-  $width-grid: false, // Width of the containng div in grid unit
   
   $border: false // border style of the containing dic
 ) {
   @if ($width) { width: $width; }
-  @if ($width-grid){ @include ia-width($width-grid); }
   @if ($border){ border: $border; }
   
   label {
@@ -258,7 +244,34 @@
   }
 }
 
-
+// To be applied on a fieldset element 
+// fieldset { @include ia-fieldset; }
+@mixin ia-form-fieldset(
+  $background: false, // Background
+  $border: false, // Border
+  $height: false, // Height
+  $margin: false, // Margin
+  $radius: false, // Border radius
+  $padding: false, // Padding
+  $width: false, // Width
+  
+  $border-collapsed: 0 // Border
+) {
+  // open state of the fieldset
+  &.collapsible {
+    @include ia-background($background);
+    @include ia-border($border);
+    @include ia-height($height);  
+    @include ia-margin($margin);  
+    @include ia-padding($padding);  
+    @include ia-radius($radius);
+    @include ia-width($width); 
+  }
+  // closed state of the fieldset
+  &.collapsible.collapsed {
+    @include ia-border($border-collapsed);
+  }
+}
 
 // Form field style in drupal 
 // $color: Color of the text

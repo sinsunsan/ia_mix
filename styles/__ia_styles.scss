@@ -1,8 +1,14 @@
-// ia_variables.scss part of ia_mix suite
+// @file part of ia_mix suite
 // http://github.com/sinsunsan/ia_mix
 
 // STYLES
 @import "styles";
+
+// Text styles 
+@import "text";
+
+// Box styles 
+@import "box";
 
 // Form styles 
 @import "forms";

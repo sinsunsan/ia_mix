@@ -12,6 +12,7 @@
 
 
 // Set the width of an element to fit inside a specific number of grid division
+/* DEPRECATED because similar to submixin
 @mixin ia-width (
   $grid_nb , // Nb of grid division to set the width
   $grid-column-width: $ia-grid-column-width ,  
@@ -19,8 +20,7 @@
 ) {
   width: ($grid_nb * $grid-column-width) + ($grid-gutter-width * ($grid_nb - 1));
 }
-
-
+*/
 
 // Make a empty div with a background images
 // This could be used for headers with big image

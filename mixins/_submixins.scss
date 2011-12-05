@@ -37,7 +37,7 @@
 
 
 // Mixin to apply box properies in mixins 
-@mixin ia-style-box(
+@mixin ia-box(
   $width: false, 
   $width-grid: false,
   $height: false,
@@ -46,7 +46,7 @@
   $padding: false,
   $margin: false
 ){
-  @if ($width){ width: $width; }
+  @include ia-width($width);
   @if ($width-grid){ @include ia-width($width-grid) }
   
   @if ($height){ height: $width; }
@@ -73,6 +73,34 @@
   // @todo found a hack to apply the folowing selectively for IE
   // zoom: 1; // Give the layout to the element
   // display: inline; 
+}
+
+
+
+
+@mixin ia-background ($background:false){
+  @if ($background){ background: $background; }
+}
+@mixin ia-border ($border:false){
+  @if ($border){ border: $border; }
+}
+@mixin ia-height ($height:false) {
+  @if ($height){ height: $height }  
+}
+@mixin ia-font-size ($font-size:false) {
+  @if($font-size){ font-size: $font-size; }
+}
+@mixin ia-margin ($margin:false) {
+  @if($margin){ margin: $margin; }
+}
+@mixin ia-padding ($padding:false) {
+  @if($padding){ padding: $padding; }
+}
+@mixin ia-radius ($radius:false) {
+  @if($radius){ @include border-radius($radius); }
+}
+@mixin ia-width ($width:false) {
+  @if($width){ width: $width; }
 }
 
 

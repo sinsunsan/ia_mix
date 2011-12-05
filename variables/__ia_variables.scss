@@ -5,19 +5,22 @@
 @import "variables";
 
 // Typographic variables
-@import "variables_text";
+@import "text";
 
 // Typographic variables
-@import "variables_color";
+@import "color";
+
+// Boxes
+@import "box";
 
 // Layout variables
-@import "variables_layout";
+@import "layout";
 
 // Standard Drupal specific Variables
-@import "variables_element";
+@import "element";
 
 // Standard Drupal specific Variables
-@import "variables_form";
+@import "form";
 
 // Standard Drupal specific Variables
-@import "variables_drupal";
+@import "drupal";

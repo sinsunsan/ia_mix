@@ -20,6 +20,9 @@
   // td the table cell 
   // th the table header cell
   
+  @include ia-table-default;
+  
+  
   table-layout: fixed;
   th {
     padding: $font-size*0.6;
@@ -54,9 +57,10 @@
 }
 
 // Default setting for all tables
-@mixin ia-default-table() {
-  table {
-    
-    
-  }
+// table {  @include ia-table-default }
+@mixin ia-table-default() {
+    td {
+      // Default padding of the table cells
+      padding: $ia-base-tx;
+    }
 }
