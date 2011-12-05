@@ -78,8 +78,10 @@
         padding: $font-size/1.5;
       } 
        
-      // The only active tag
-      &.active a {
+      // The active tag alone
+      // different selector depending of the module that make this tabs
+      &.ui-tabs-selected a, // field groupe module markup
+      &.active a { // other module markup
         background: $tab-active-background;
         
         border: $tab-active-border;

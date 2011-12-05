@@ -12,7 +12,16 @@
     $width: ia-grid($width)
   )
 }
-
+@mixin ia-style-input-select (
+  $width:  6
+) {
+  @include ia-form-input-select(
+    $border: $ia-form-input-border,
+    $font-size: $ia-tx-norm,
+    $radius: 4px,
+    $width: ia-grid($width)
+  ); 
+}
 
 
 @mixin ia-style-input-text-area (
@@ -57,4 +66,12 @@
   // No right padding to be align with the field
   padding: $ia-tx-note 0;
 }
+
+
+// When used on a wrapping div wrapping
+// several cck fields those fields will float
+.ia_fields_group {
+  @include ia-fields-float();
+}
+
 

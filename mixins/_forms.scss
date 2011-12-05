@@ -45,6 +45,38 @@
 
 }
 
+// Set the style of form input text element 
+// As found in drupal node form
+//
+// Sould be applyed to a form item container
+// .form-item { @include ia-form-field-input }
+@mixin ia-form-input-select (
+  $background: $ia-form-input-background,
+  $border: false,
+  $font-size: $ia-tx-norm,
+  $radius: false,
+  $width-grid: false,
+  $width: false,
+  $border: solid 1px $ia-col-gris-light
+) {    
+    // Both system of width are accepted
+    // Cause of of bug of interpretation (don't change {  position })
+    select
+    { 
+      margin: 0;
+      @if ($background){ background: $background; } 
+      height: 1.5 * $font-size;
+      @if ($border){ border: $border; }
+      @if ($radius){@include border-radius($radius);}
+      @if ($width){ width: $width; }
+      @if ($width-grid){ @include ia-width($width-grid) }
+      
+      @include ia-form-input-fields;
+    }
+
+}
+
+
 // Should be applyed in the field container 
 // .form-item-textarea { @include ia-form-text-area }
 @mixin ia-form-text-area(
@@ -81,6 +113,10 @@
   }
   // Help text below
   .description {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
     @if ($width){ width: $width; }
     @if ($width-grid){ width: ia-grid($width-grid) }
   }
@@ -98,6 +134,17 @@
   $width: false,
   $width-grid: false  
 ) {
+  
+  .widget-preview {
+    // Make an annoying right border disapear
+    border: 0;
+  }
+  .imagefield-preview {
+    // The height of the image field preview 
+    // has only the image size as minimal values
+    min-width: 0;
+    min-height: 0;
+  }
   
   ///.filefield-element {
   //  margin-top: 0;
