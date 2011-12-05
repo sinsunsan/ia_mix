@@ -26,3 +26,38 @@
     } 
   }
 }
+
+
+// The default VBO apperance
+// The submit button is along the select list and not under
+// Sould be included inside a view definition 
+// .view-example { include ia-view-vbo;  }
+@mixin ia-view-vbo(
+  $font-size: $ia-tx-norm
+){
+
+  // The VBO node selector select list + button
+  #views-bulk-operations-select {
+    margin-top: $font-size * 2;
+    margin-bottom: $font-size;
+    // Legend is hidden "batch operations"
+    legend {
+      display: none;
+    }
+    input[type="submit"] { 
+      font-size: $ia-tx-s;
+    }
+  } 
+  // The rest of the view, the view result and the select list of VBO 
+  // To select which row are concerned 
+  .views-node-selector {
+    // Push the operation selector up to give space to the row selector
+    margin-top: 10px;
+    // The row selector
+    // Row selector label (select list all on this page...)
+    th.select {
+      position: relative;
+      top: -30px;  
+    }
+  }
+}

@@ -1,6 +1,14 @@
 // This file is part of ia_mix suite
 // http://github.com/sinsunsan/ia_mix
 
+// Common settings to node edit form
+@mixin ia-form-node-edit(){
+  // This class added by ia_editforms modules wrap the node edit button in a div
+  .node-buttons {
+    margin-top: 20px;
+  }
+}
+
 // Settings common to all fields
 @mixin ia-form-input-fields(){
   // Settings directly form twitter bootstrap

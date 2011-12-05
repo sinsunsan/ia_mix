@@ -11,7 +11,10 @@
 }
 
 // The width of the $nb of column in the grid system
-@mixin ia-span($nb, $grid-column: $ia-grid-column-width) {
+@mixin ia-span(
+  $nb,
+  $grid-column: $ia-grid-column-width
+) {
   width: $nb*$grid-column;
 }
 
@@ -24,8 +27,10 @@
 // Allow to defin in one shot the font-size and the line height proportionaly
 // $font-size : Size of the text
 // $
-@mixin ia-tx-size($font-size, 
-$line-height-factor:$ia-tx-line-height-factor) {
+@mixin ia-tx-size(
+  $font-size, 
+  $line-height-factor:$ia-tx-line-height-factor
+) {
   font-size: $font-size;
   line-height: $font-size * $line-height-factor;
 }
@@ -52,3 +57,23 @@ $line-height-factor:$ia-tx-line-height-factor) {
   @if ($padding){ padding: $padding; }
   @if ($margin){ padding: $margin; }
 }  
+
+// Apply the display:inline-block even for IE 
+// http://www.alsacreations.com/article/lire/1209-display-inline-block.html
+// To be applied to the element to give the inline block display
+@mixin ia-inline-block {
+  display: inline-block;
+  
+  // Hacks for IE 
+  // For IE < to 8 the display: inline-block doesn't work if the 
+  // standard display of the element is block (for example applyed to a div)
+  // But the two following line works the same for IE 
+  // They souldn't be interpreted for browser different from IE
+  
+  // @todo found a hack to apply the folowing selectively for IE
+  // zoom: 1; // Give the layout to the element
+  // display: inline; 
+}
+
+
+
