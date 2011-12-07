@@ -18,9 +18,10 @@
 // Twitter button using twitter bootstrap
 @mixin ia-style-button-twitter(
   $background-color: false,
-  $color: false
+  $color: false,
+  $font-size: $basefont
 ) {
-  @include ia-button-twitter;
+  @include ia-button-twitter($font-size);
   @if ($background-color){
     @if ($color){
       &,
@@ -30,4 +31,21 @@
     }
     @include gradientBar($background-color, darken($background-color,20%));
   }
+}
+
+
+@mixin ia-style-button {
+  @include ia-style-button-twitter;
+}
+// This button use twitter button also but are smaller. 
+// There can be used for smaller element like filefield sumbit button, hierarchical create new term submit button...
+@mixin ia-style-button-small {
+  @include ia-style-button-twitter (
+    $font-size: $ia-tx-s
+  );
+}
+@mixin ia-style-button-medium {
+  @include ia-style-button-twitter (
+    $font-size: $ia-tx-m
+  );
 }

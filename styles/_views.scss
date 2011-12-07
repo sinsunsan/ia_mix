@@ -1,0 +1,17 @@
+
+
+
+
+@mixin ia-style-view() {
+  
+  @include ia-view;
+  
+  .view-filters {
+    .views-exposed-widget input[type="submit"] {
+      @include ia-style-button-small;
+    }
+  }
+  
+  
+  
+}

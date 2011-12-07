@@ -9,7 +9,11 @@
 //  .view-header : The header of the view
 //  .view-content : The content of the view
 
-@mixin ia-view-admi($font-size: $ia-tx-norm) {
+
+@mixin ia-view(
+
+
+) {
   .view-header {
     padding: $ia-tx-norm*0.8 0;
     // Link in header are a bigger, because they 
@@ -17,15 +21,30 @@
       font-size: $ia-tx-norm*1.2;
     }
   }
+
   .view-content {
+    margin-top: $ia-base-tx;
     // When the view use a table 
     // View Bulk Operation or table display 
     // It use ia-table-admi mixin
     table {
-      @include ia-table-admi;
     } 
   }
+  
 }
+
+
+@mixin ia-view-admi(
+  $font-size: $ia-tx-norm
+) {
+  @include ia-view;
+  table {
+    @include ia-table-admi;
+  }
+
+
+}
+
 
 
 // The default VBO apperance

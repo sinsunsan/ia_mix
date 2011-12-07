@@ -1,0 +1,91 @@
+// @file part of ia_mix suite
+// http://github.com/sinsunsan/ia_mix
+
+// Default styles for html element
+// To be applied on a html element
+// html { @include ia-style-html; }
+@mixin ia-style-html() {
+  body {
+        color: $ia-col-gris-dark;
+        font-family: $fonts;
+        font-size: $ia-tx-m;
+        line-height: $ia-tx-m * $ia-tx-line-height-factor;
+      }
+
+      // Titles
+      h1,
+      h2,
+      h3,
+      h4, 
+      h5, 
+      h6 {
+        color: $ia-col-gris-dark;
+        font-weight: normal;
+        margin-bottom: $ia-base-tx;
+      }
+
+      h1 {
+        font-size: $ia-tx-xl;
+      }
+      .block h2, // Drupal override
+      h2 {
+        font-size: $ia-tx-l;
+      }
+      h3, h4, h5, h6 {
+        font-size: $ia-tx-m;
+      }
+
+
+      // Links
+      a:link,
+      a:visited, 
+      a:hover,
+      a:active {
+        font: $ia-tx-style-link;
+        text-decoration: none;
+      }
+
+
+      a:link, 
+      a:visited {
+        color: $ia-col-gris-dark;
+        font: $ia-tx-style-link-hover;
+      }
+      
+      a:hover, 
+      a:active
+      a h2:hover {
+        color: $ia-col-tx-link-hover;
+      }
+
+      // Lists
+      ul {
+        padding: 0;
+      }
+      
+      li {
+        font-size: $ia-tx-m;
+        line-height:$ia-tx-m*1.2;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        a:hover {
+           color: $ia-col-tx-link; 
+        };
+      }
+
+      // Paragraphers
+      p {
+        font-size: $ia-tx-m;
+        line-height: $ia-tx-m*1.2;
+        // Allow to have readable paragrapher 
+        max-width: 600px;
+      }
+
+      strong {
+        color: $ia-col-gris-black;
+        font-weight: bold;
+      }
+
+  
+}

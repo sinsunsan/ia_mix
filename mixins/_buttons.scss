@@ -45,7 +45,9 @@
 // This mixin is dependant on some of twitter mixin 
 
 // Base .btn styles
-@mixin ia-button-twitter {
+@mixin ia-button-twitter(
+  $font-size: $basefont
+) {
   // Button Base
   cursor: pointer;
   display: inline-block;
@@ -53,7 +55,7 @@
   padding: 5px 14px 6px;
   text-shadow: 0 1px 1px rgba(255,255,255,.75);
   color: #333;
-  font-size: $basefont;
+  font-size: $font-size;
   line-height: normal;
   border: 1px solid #ccc;
   border-bottom-color: #bbb;

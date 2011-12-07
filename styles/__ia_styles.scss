@@ -1,6 +1,9 @@
 // @file part of ia_mix suite
 // http://github.com/sinsunsan/ia_mix
 
+// HTML element
+@import "html";
+
 // STYLES
 @import "styles";
 
@@ -10,6 +13,9 @@
 // Box styles 
 @import "box";
 
+// Nodes styles 
+@import "node";
+
 // Form styles 
 @import "forms";
 
@@ -18,3 +24,6 @@
 
 // Block styles 
 @import "blocks";
+
+// Views styles 
+@import "views";

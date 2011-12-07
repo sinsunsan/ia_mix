@@ -115,6 +115,7 @@
 
 // This mixin sould be applied of the field element 
 // but this field don't ouput a class that specify it's type at the top level
+// @todo add this missing class with ia module
 @mixin ia-form-file-field (
   $background: $ia-form-input-background,
   $border: none,
@@ -142,11 +143,14 @@
     // Both system of width are accepted
     // Cause of of bug of interpretation (don't change {  position })
     input[type="file"]{
+      // Default margin to give space at right of the select list
+      margin-right: 15px;
       @include ia-background($background);
       height: 1.5 * $font-size;
       @include ia-border($border);
       @include ia-radius($radius);
       @include ia-width($width);
+       
     }
     // Button that allow to load the image before submitting the node
     // When the image is loaded change to a remove button
@@ -155,7 +159,30 @@
     // When the image is one depending off the cases 
     // It's useful to have the button or not
     input[type="submit"]{
-      //display: none;
+      @include ia-style-button-small;
+    }
+    // For multifields button to add another element
+   
+}
+
+// Multiple file field output is different
+// This is a default styling
+@mixin ia-form-file-field-multiple (){
+  // File field multiple
+  table.content-multiple-table {
+    // Remove default border and background
+    tr.even,
+    tr.odd {
+      background-color: transparent;
+      border: 0;
+      border-top: dotted 1px $grayLight;
+    }
+  }
+  .content-add-more {
+    margin-top: $ia-base-tx;
+    input[type="submit"]{
+      @include ia-style-button-medium;
+    }
   }
 }
 

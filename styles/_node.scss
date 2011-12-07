@@ -1,0 +1,11 @@
+// @file part of ia_mix suite
+// http://github.com/sinsunsan/ia_mix
+
+// Node display 
+// Should be applyed to a node element 
+// .node { @include ia-style-node-display; }
+@mixin ia-style-node-display($font-size:$ia-base-tx){
+  .field {
+    margin-bottom: $font-size * 0.5;
+  }
+}
