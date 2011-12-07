@@ -71,6 +71,7 @@ $ia-tx-style-big:  #{$ia-tx-big}/#{($ia-tx-big * $ia-tx-line-height-factor)} $ia
 // Imported from https://github.com/rafzan/rafzan-sass-compass-framework/blob/master/src/_base.sass
 // Fonts --------------------------------------------------------------------
 
+
 @mixin ia-tx-family-sans {
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
@@ -83,6 +84,11 @@ $ia-tx-style-big:  #{$ia-tx-big}/#{($ia-tx-big * $ia-tx-line-height-factor)} $ia
 
 @mixin ia-tx-family-monospace {
   font-family: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
+}
+  
+// Default font family  
+@mixin ia-tx-family {
+  @include ia-tx-family-sans;
 }
   
 

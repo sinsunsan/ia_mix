@@ -8,7 +8,8 @@
 // The targeting class will be different
 // 
 // To use apply on the main container of the tab
-// #quicktabs-edi_og_tabs {@include ia-menu-tabs}
+// #quicktabs-edi_og_tabs { @include ia-menu-tabs } // A specific quicktab tab
+// #content-tabs { @include ia-menu-tabs } // The default node tabs
 
 @mixin ia-menu-tabs(
   $font-size: 12px , // Text height from which is calculated margin and paddings
@@ -35,6 +36,11 @@
   $container-background:'white', // The background style of the container
   $container-border: solid 1px $ia-col-gris-light // The border style of the container
 ) {
+  // Properties to override default behavior with #content-tabs
+  background: transparent;
+  border: 0;
+  @include ia-tx-family;
+  
   // Content area
   .quicktabs_main {
     border: $container-border;

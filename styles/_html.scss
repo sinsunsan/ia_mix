@@ -7,7 +7,7 @@
 @mixin ia-style-html() {
   body {
         color: $ia-col-gris-dark;
-        font-family: $fonts;
+        @include ia-tx-family-sans;
         font-size: $ia-tx-m;
         line-height: $ia-tx-m * $ia-tx-line-height-factor;
       }
