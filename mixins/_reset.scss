@@ -1,0 +1,8 @@
+// @file part of ia_mix suite
+// http://github.com/sinsunsan/ia_mix
+
+// Reset li decoration 
+@mixin ia-reset-li {
+    list-style-image: none;
+    list-style-type: none;
+}
