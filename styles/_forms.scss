@@ -137,4 +137,16 @@
   @include ia-fields-float();
 }
 
+@mixin ia-style-fieldset-location {
+  @include ia-fieldset-location(
+    $border: none, // Border
+    $radius: false, // Border radius
+    $label-float: none, // The label is not floating
+    $label-text-align: left, // Alignement of the text label
+    $label-width: auto, // Fixed width of the labels
+    $field-width: auto  // Fixed width of the fields
+  );
+  
+}
+
 
