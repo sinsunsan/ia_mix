@@ -41,19 +41,26 @@
   border: 0;
   @include ia-tx-family;
   
-  // Content area
-  .quicktabs_main {
+  .ui-tabs-panel, //Content area for field group tabs
+  .quicktabs_main// Content area
+   {
     border: $container-border;
     border-top: none; // The top border is hidden hidden, it's drawn by the ul element
     min-height: 500px;
     padding: 2em;
   }
-  //Container of all tabs
+  //Container of all tabs navigation element
+  ul.ui-tabs-nav, // tabs elements for field group tabs
   ul#{$ul-class} { 
     border-bottom: $container-border;
     height: 100%;
     
+    // Put all margin to 0 expept upper margin
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
     margin-top: 1.2*$font-size;
+    
     overflow: hidden;
     padding: 0;
     width: 100%;
@@ -92,6 +99,7 @@
         
         border: $tab-active-border;
         border-bottom: none;
+        
         
         // border-bottom: solid 1px $col-blanc;
         @if ($tab-active-tx-color) { color: $tab-active-tx-color; }
