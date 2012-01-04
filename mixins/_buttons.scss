@@ -81,7 +81,7 @@
   }
 
    // Transitions
-  @include transition(.1s linear all);
+  //@include transition(.1s linear all);
 
   // Active and Disabled states
   &.active,

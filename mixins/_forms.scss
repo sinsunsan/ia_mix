@@ -316,3 +316,34 @@
 
 
 
+//To be applied to the location fieldset 
+// fieldset.location { @include ia-fieldset-location; }
+@mixin ia-fieldset-location(
+  $border: false, // Border
+  $radius: false, // Border radius
+  $label-float: left, // is the label float at the left of the field
+  $label-text-align: left, // Alignement of the text label
+  $label-width: ia-grid(4), // Fixed width of the labels
+  $field-width: ia-grid(6)  // Fixed width of the fields
+) {
+  // The wrapping div that can have a border style
+  .fieldset-wrapper {
+    @include ia-border($border);
+    @include ia-radius($radius);
+    
+    // Label of the fields
+    label {
+      float: $label-float;
+      text-align: $label-text-align;
+      width: $label-width;
+    }
+    // Fields 
+    .form-item {
+      
+    }
+    
+  }
+  
+  
+}
+

@@ -89,6 +89,7 @@
         float: $float;
         margin: 0;
         padding: $font-size/1.5;
+        @include ia-font-size($font-size);
       } 
        
       // The active tag alone
