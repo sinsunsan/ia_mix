@@ -1,7 +1,7 @@
 // This file is part of ia_mix suite
 // http://github.com/sinsunsan/ia_mix
 
-
+// The search block
 @mixin ia-block-search (
   $border: false, 
   $background: false,
@@ -27,5 +27,32 @@
   input[type="submit"] {
     display: none;
   }
- 
 }
+
+// The content complete block 
+// http://drupal.org/project/content_complete
+// #content-complete-wrapper { @include ia-content-complete; }
+@mixin ia-content-complete (
+  $background: gray,
+  $border: solid 1px gray,
+  $height: 15px,
+  $radius: false,
+  $width: 75px
+){
+  // The content complete bar itself
+  #content-complete-percent-bar-wrapper {
+    @include ia-border($border);
+    @include ia-height($height);
+    @include ia-radius($radius);
+    @include ia-width($width);
+    // The color bar inside that indicate completeness
+    #content-complete-percent-bar{
+      @include ia-border($border);
+      @include ia-background($background);
+      height: $height - 2px; // To allow the containing complete bar get the full height of its wrapper
+      @include ia-radius($radius);
+      
+    }
+  } 
+}
+
