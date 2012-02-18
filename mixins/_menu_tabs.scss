@@ -11,6 +11,8 @@
 // #quicktabs-edi_og_tabs { @include ia-menu-tabs } // A specific quicktab tab
 // #content-tabs { @include ia-menu-tabs } // The default node tabs
 
+
+// DEPRECATED : Use instead ia-tabs
 @mixin ia-menu-tabs(
   $font-size: 12px , // Text height from which is calculated margin and paddings
   $float: left , // If the tabs are aligned to left of to right
@@ -49,9 +51,17 @@
     min-height: 500px;
     padding: 2em;
   }
+  
+  // Add a second selector only if a $ul-class is given 
+  // To prevent a too general scope 
+  //@if ($ul-class) { $selector: ul#{$ul-class}; }
+  // Abandonned because can't set in SASS selector with variable interpolation 
+  //{$selector} { border: solid 1px blue;} // Is an error in SASS
+  
   //Container of all tabs navigation element
   ul.ui-tabs-nav, // tabs elements for field group tabs
-  ul#{$ul-class} { 
+  ul.quicktabs_tabs // Quicktabs by quicktab module http://drupal.org/project/quicktabs
+  { 
     border-bottom: $container-border;
     height: 100%;
     
@@ -105,7 +115,7 @@
         // border-bottom: solid 1px $col-blanc;
         @if ($tab-active-tx-color) { color: $tab-active-tx-color; }
         @if ($tab-active-tx-style) { color: $tab-active-tx-style; }
-        padding: $font-size/1,5 !important; 
+        padding: $font-size / 1.5 !important; 
       }
     }  
   }

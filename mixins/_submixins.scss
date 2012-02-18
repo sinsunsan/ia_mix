@@ -76,7 +76,7 @@
 }
 
 
-
+// Submixin to apply the argument send to the mixin and before test their existence
 
 @mixin ia-background ($background:false){
   @if ($background){ background: $background; }
@@ -84,8 +84,17 @@
 @mixin ia-border ($border:false){
   @if ($border){ border: $border; }
 }
+@mixin ia-color ($color:false){
+  @if ($color){ color: $color; }
+}
 @mixin ia-height ($height:false) {
   @if ($height){ height: $height }  
+}
+@mixin ia-float ($float:false) {
+  @if($float){ float: $float; }
+}
+@mixin ia-font ($font:false) {
+  @if($font){ font: $font; }
 }
 @mixin ia-font-size ($font-size:false) {
   @if($font-size){ font-size: $font-size; }

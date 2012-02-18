@@ -1,0 +1,143 @@
+// This file is part of ia_mix suite
+// http://github.com/sinsunsan/ia_mix
+
+
+// A copy of ia_menu_tabs imprpved to accept the new FALSE default method
+// TABS Menu
+//
+// Drupal use tabs for a lot of interface elements 
+// Depending on the module that ouput the html
+// The targeting class will be different
+// 
+// To use apply on the main container of the tab
+// #quicktabs-edi_og_tabs { @include ia-menu-tabs } // A specific quicktab tab
+// #content-tabs { @include ia-menu-tabs } // The default node tabs
+
+@mixin ia-tabs(
+  // Default properties
+  $border:false,
+  $float: left , // If the tabs are aligned to left of to right
+  $font: false,
+  $font-size: $ia-tx-norm,
+  $padding-factor: 1, // coef of padding relative to text size
+  $radius: false,
+  
+  // All tabs
+  $tabs-separator: 2px,
+  $tabs-border: false,
+  $tabs-background: false,
+  $tabs-color: false,
+  $tabs-font: false ,
+  $tabs-font-size: false, 
+  
+  // Default tabs
+  $tab-active-border: false , 
+  $tab-active-background: false , 
+  $tab-active-color: false,
+  $tab-active-font: false , 
+  $tab-active-font-size: false , 
+  
+  // Tabs wrapper properties
+  $container-background: false, // The background style of the container
+  $container-border: false, // The border style of the container
+  $container-padding: 25px // The border style of the container
+  
+) {
+  // Default value affectation
+  @if ($border) {
+    @if ($tabs-border == false) {$tabs-border: $border;}
+    //@if ($tab-active-border == false) {$tab-active-border: $border;}
+  }
+  @if ($font) {
+    @if ($tabs-font == false) {$tabs-font: $font;}
+    @if ($tab-active-font == false) {$tab-active-font: $font;}
+  }
+  @if ($font-size) {
+     @if ($tabs-font-size == false) {$tabs-font-size: $font;}
+     @if ($tab-active-font-size == false) {$tab-active-font-size: $font;}
+  }
+
+  
+  // Properties to override default behavior with #content-tabs
+  background: transparent;
+  border: 0;
+  
+  .ui-tabs-panel, //Content area for field group tabs
+  .quicktabs_main// Content area
+   {
+     @include ia-background($container-background);
+     @include ia-border($container-border);
+     border-top: none; // The top border is hidden hidden, it's drawn by the ul element
+     // min-height: 500px;
+     @include ia-padding($container-padding);
+   }
+  
+  
+  //Container of all tabs navigation element
+  ul.ui-tabs-nav, // tabs elements for field group tabs
+  ul.quicktabs_tabs // Quicktabs by quicktab module http://drupal.org/project/quicktabs
+  { 
+    border-bottom: $container-border;
+    height: 100%;
+    
+    // Put all margin to 0 expept upper margin
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-top: 1.2 * $font-size;
+    
+    overflow: hidden;
+    padding: 0;
+    width: 100%;
+    
+    // Container of on tab
+    li {
+      background: transparent;
+      height: auto;
+      
+      height: $font-size * 3.5;// hack to remove
+      min-height: 0;
+
+      list-style-type: none;
+
+      margin: 0;
+      overflow: visible;
+      padding: 0;
+      
+      @include ia-float($float);
+    
+      // width between each tab
+      @if ($float == 'left') { margin-right: $tabs-separator; }
+      @if ($float == 'right') { margin-left: $tabs-separator; }
+      
+      // All tabs (including the active one) 
+      & a {
+        
+        height: auto; // The height is fully determined by the font size
+        padding: $font-size*$padding-factor $font-size*$padding-factor*2 !important; 
+        
+        @include ia-background($tabs-background);    
+        @include ia-border($tabs-border);
+        @include ia-color($tabs-color);
+        @include ia-font($tabs-font);
+        @include ia-font-size($tabs-font-size);     
+        @if ($radius){ @include border-top-radius($radius);}
+        
+      }
+      // The active tag alone
+      // different selector depending of the module that make this tabs
+      &.ui-tabs-selected a, // field groupe module markup
+      &.active a { // other module markup
+        height: auto; // The height is fully determined by the font size
+        padding: $font-size * $padding-factor !important; 
+
+        @include ia-background($tab-active-background);    
+        @include ia-border($tab-active-border);
+        @include ia-color($tab-active-color);
+        @include ia-font($tab-active-font);
+        @include ia-font-size($tab-active-font-size);
+
+      }  
+    }  
+  }  
+}

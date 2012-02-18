@@ -62,7 +62,7 @@ $ia-tx-style-link: normal normal $ia-tx-norm/$ia-tx-norm * $ia-tx-line-height-fa
 // Hover link are generally different only by the color
 $ia-tx-style-link-hover: $ia-tx-style-link;
 
-// Definition of text style the font familly is necessary
+// Definition of text style the font family is necessary
 $ia-tx-style-norm:  #{$ia-tx-norm}/#{($ia-tx-norm * $ia-tx-line-height-factor)} $ia-tx-font-family;
 $ia-tx-style-note:  #{$ia-tx-note}/#{($ia-tx-note * $ia-tx-line-height-factor)} $ia-tx-font-family;
 $ia-tx-style-big:  #{$ia-tx-big}/#{($ia-tx-big * $ia-tx-line-height-factor)} $ia-tx-font-family ;

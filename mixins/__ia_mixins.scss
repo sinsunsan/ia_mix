@@ -16,7 +16,11 @@
 
 
 // Tabs : Integrate with standard drupal tabs
+// Deprecated version
 @import "menu_tabs";
+
+// New version
+@import "tabs";
 
 // Buttons : Buttons make easy and configurable
 @import "fields_floats";
