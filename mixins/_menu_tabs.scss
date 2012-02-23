@@ -59,6 +59,7 @@
   //{$selector} { border: solid 1px blue;} // Is an error in SASS
   
   //Container of all tabs navigation element
+  ul#{$ul-class}, 
   ul.ui-tabs-nav, // tabs elements for field group tabs
   ul.quicktabs_tabs // Quicktabs by quicktab module http://drupal.org/project/quicktabs
   { 
