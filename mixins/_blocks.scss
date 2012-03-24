@@ -94,14 +94,19 @@
   }
   ul.pager {
     li span, // by default current item will have the same aspect that others
-    li.a {
+    li a {
       @include ia-background($item-background);
       @include ia-border($item-border);
       @include ia-font($item-font);
       @include ia-font-size($item-font-size);
       @include ia-padding($item-padding);
       @include ia-radius($item-radius);
+      &:hover{
+          @include ia-background($item-background);
+          @include ia-font($item-font);
+      }
     }
+
     // The current pager is not clickable and are thus not a a markup 
     // It override the default apearance
     li.pager-current span {
