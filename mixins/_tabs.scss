@@ -30,12 +30,19 @@
   $tabs-font: false ,
   $tabs-font-size: false, 
   
-  // Default tabs
+  // Active tabs
   $tab-active-border: false , 
   $tab-active-background: false , 
   $tab-active-color: false,
   $tab-active-font: false , 
   $tab-active-font-size: false , 
+  
+  // Hovered tabs
+  $tabs-hover-border: false , 
+  $tabs-hover-background: false , 
+  $tabs-hover-color: false,
+  $tabs-hover-font: false , 
+  $tabs-hover-font-size: false ,
   
   // Tabs wrapper properties
   $container-background: false, // The background style of the container
@@ -124,12 +131,23 @@
         @if ($radius){ @include border-top-radius($radius);}
         
       }
+      
+      // The non active tabs hovered
+      & a:hover {
+        @include ia-background($tabs-hover-background);    
+        @include ia-border($tabs-hover-border);
+        @include ia-color($tabs-hover-color);
+        @include ia-font($tabs-hover-font);
+        @include ia-font-size($tabs-hover-font-size);
+
+      }
+      
       // The active tag alone
       // different selector depending of the module that make this tabs
       &.ui-tabs-selected a, // field groupe module markup
       &.active a { // other module markup
         height: auto; // The height is fully determined by the font size
-        padding: $font-size * $padding-factor !important; 
+        padding: $font-size*$padding-factor $font-size*$padding-factor*2 !important; 
 
         @include ia-background($tab-active-background);    
         @include ia-border($tab-active-border);
