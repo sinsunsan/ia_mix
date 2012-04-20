@@ -21,16 +21,12 @@
   $color: false,
   $font-size: $basefont
 ) {
-  @include ia-button-twitter($font-size);
-  @if ($background-color){
-    @if ($color){
-      &,
-      &:hover {
-        color: $color; 
-      }
+    @include ia-button-twitter($font-size);
+    &,
+    &:hover {
+      @include ia-color($color);
     }
-    @include gradientBar($background-color, darken($background-color,20%));
-  }
+    @if ($background-color){ @include gradientBar($background-color, darken($background-color,20%));}
 }
 
 
