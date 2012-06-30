@@ -24,6 +24,7 @@
   $background: $ia-form-input-background,
   $border: false,
   $font-size: $ia-tx-norm,
+  $height: false,
   $radius: false,
   $width: false,
   $border: solid 1px $ia-col-gris-light
@@ -32,9 +33,11 @@
     // Cause of of bug of interpretation (don't change {  position })
     input[type="text"]
     {
+      box-shadow: none;
       @include ia-background($background); 
       height: 1.5 * $font-size;
       @include ia-border($border);
+      @include ia-font-size($font-size);
       @include ia-radius($radius);
       @include ia-width($width);      
       @include ia-form-input-fields;
