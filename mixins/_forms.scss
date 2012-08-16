@@ -87,9 +87,8 @@
   $width: false // Width
 ) {
   
-  
-  @if ($padding){ padding: $padding; }
-  @if ($margin){ padding: $margin; }
+  @include ia-padding($padding);
+  @include ia-margin($margin);
   
   // Texte area field
   .resizable-textarea {
@@ -103,6 +102,12 @@
       
     }
     @include ia-form-input-fields;
+  }
+  input[type="text"]{
+    @include ia-width($width); 
+    @include ia-font-size($font-size);
+    @include ia-height($height);
+    @include ia-background($background); 
   }
   // Help text below
   .description {
