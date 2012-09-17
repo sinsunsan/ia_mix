@@ -64,7 +64,6 @@
      @if ($tab-active-font-size == false) {$tab-active-font-size: $font;}
   }
 
-  
   // Properties to override default behavior with #content-tabs
   background: transparent;
   border: 0;
@@ -78,7 +77,6 @@
      // min-height: 500px;
      @include ia-padding($container-padding);
    }
-  
   
   //Container of all tabs navigation element
   ul.ui-tabs-nav, // tabs elements for field group tabs
@@ -97,7 +95,7 @@
     padding: 0;
     width: 100%;
     
-    // Container of on tab
+    // Container of a tab
     li {
       background: transparent;
       height: auto;  
@@ -146,7 +144,6 @@
         @include ia-color($tab-active-color);
         @include ia-font($tab-active-font);
         @include ia-font-size($tab-active-font-size);
-
       }  
     }  
   }  
