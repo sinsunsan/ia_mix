@@ -1,7 +1,3 @@
-
-
-
-
 @mixin ia-style-view() {
   
   @include ia-view;
@@ -10,8 +6,5 @@
     .views-exposed-widget input[type="submit"] {
       @include ia-style-button-small;
     }
-  }
-  
-  
-  
+  }  
 }

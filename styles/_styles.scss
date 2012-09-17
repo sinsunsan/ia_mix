@@ -10,8 +10,6 @@
 // - The folowing style will be in the final style sheet
 // - For this reason we use the /**/ comment style in order the final css stylesheet class be commented
 
-
-
 .ia-fieldset-simple {
   border: dotted 1px $ia-line-col;
   margin: 1em 0.5em 1em 0.5em;
@@ -23,7 +21,6 @@
   
 }
 
-
 .ia-para {
   margin-bottom: 2em;
 }
@@ -33,7 +30,6 @@
 .ia-view-admi {
   @include ia-view-admi;
 }
-
 
 // Standard IA title style
 // In each title level that correspond to H1 H2 H3 H4 
@@ -45,13 +41,16 @@
 .ia-title1 {
   @include ia-tx-size($ia-tx-xxl);
 }
+
 .ia-title2 {
   @include ia-tx-size($ia-tx-xl);
   
 }
+
 .ia-title3 {
   @include ia-tx-size($ia-tx-l);
 }
+
 .ia-title4 {
   @include ia-tx-size($ia-tx-m);
 }

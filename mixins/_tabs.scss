@@ -100,14 +100,11 @@
     // Container of on tab
     li {
       background: transparent;
-      height: auto;
-      
+      height: auto;  
       height: $font-size * 3.5;// hack to remove
-      min-height: 0;
-
       list-style-type: none;
-
       margin: 0;
+      min-height: 0;
       overflow: visible;
       padding: 0;
       
@@ -119,17 +116,14 @@
       
       // All tabs (including the active one) 
       & a {
-        
         height: auto; // The height is fully determined by the font size
-        padding: $font-size*$padding-factor $font-size*$padding-factor*2 !important; 
-        
+        padding: $font-size*$padding-factor $font-size*$padding-factor*2 !important;  
         @include ia-background($tabs-background);    
         @include ia-border($tabs-border);
         @include ia-color($tabs-color);
         @include ia-font($tabs-font);
         @include ia-font-size($tabs-font-size);     
-        @if ($radius){ @include border-top-radius($radius);}
-        
+        @if ($radius){ @include border-top-radius($radius);} 
       }
       
       // The non active tabs hovered
@@ -139,16 +133,14 @@
         @include ia-color($tabs-hover-color);
         @include ia-font($tabs-hover-font);
         @include ia-font-size($tabs-hover-font-size);
-
       }
       
       // The active tag alone
       // different selector depending of the module that make this tabs
-      &.ui-tabs-selected a, // field groupe module markup
+      &.ui-tabs-selected a, // field group module markup
       &.active a { // other module markup
         height: auto; // The height is fully determined by the font size
         padding: $font-size*$padding-factor $font-size*$padding-factor*2 !important; 
-
         @include ia-background($tab-active-background);    
         @include ia-border($tab-active-border);
         @include ia-color($tab-active-color);

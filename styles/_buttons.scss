@@ -10,10 +10,10 @@
 .ia-button-big {
   @include ia-button($font-size: $ia-tx-title, $radius: 20px);
 }
+
 .ia-button-light {
   @include ia-button($font-size: $ia-tx-norm, $radius: 10px);
 }
-
 
 // Twitter button using twitter bootstrap
 @mixin ia-style-button-twitter(
@@ -29,10 +29,10 @@
     @if ($background-color){ @include gradientBar($background-color, darken($background-color,20%));}
 }
 
-
 @mixin ia-style-button {
   @include ia-style-button-twitter;
 }
+
 // This button use twitter button also but are smaller. 
 // There can be used for smaller element like filefield sumbit button, hierarchical create new term submit button...
 @mixin ia-style-button-small {
@@ -40,6 +40,7 @@
     $font-size: $ia-tx-s
   );
 }
+
 @mixin ia-style-button-medium {
   @include ia-style-button-twitter (
     $font-size: $ia-tx-m
