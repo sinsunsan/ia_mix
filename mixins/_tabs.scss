@@ -99,7 +99,7 @@
     li {
       background: transparent;
       height: auto;  
-      height: $font-size * 3.5;// hack to remove
+      //height: $font-size * 3.5;// hack to remove
       list-style-type: none;
       margin: 0;
       min-height: 0;
@@ -114,6 +114,8 @@
       
       // All tabs (including the active one) 
       & a {
+        line-height: auto;
+        min-height: 0;
         height: auto; // The height is fully determined by the font size
         padding: $font-size*$padding-factor $font-size*$padding-factor*2 !important;  
         @include ia-background($tabs-background);    
@@ -137,7 +139,6 @@
       // different selector depending of the module that make this tabs
       &.ui-tabs-selected a, // field group module markup
       &.active a { // other module markup
-        height: auto; // The height is fully determined by the font size
         padding: $font-size*$padding-factor $font-size*$padding-factor*2 !important; 
         @include ia-background($tab-active-background);    
         @include ia-border($tab-active-border);
