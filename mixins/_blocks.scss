@@ -67,6 +67,7 @@
   $item-color: false, 
   $item-font: false,
   $item-font-size: $ia-tx-norm,
+  $item-margin: false,
   $item-padding: false,
   $item-radius: false,
   
@@ -91,15 +92,19 @@
   & {// The pager wrapper itself
     @include ia-background($wrapper-background);
     @include ia-border($wrapper-border);
-    @include ia-float($wrapper-float);
     @include ia-height($wrapper-height);
     @include ia-margin($wrapper-margin);
     @include ia-padding($wrapper-padding);
   }
   ul.pager {
+    // The float is given to the inner element so that the wrapper could be a normal element
+    @include ia-float($wrapper-float);
     margin: 0;
     padding: 0;
     @include ia-padding($wrapper-padding);
+    li {
+      @include ia-margin($item-margin);
+    }
     li span, // by default current item will have the same aspect that others
     li a {
       @include ia-background($item-background);
