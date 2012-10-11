@@ -64,6 +64,7 @@
   // The properties of the paging items
   $item-background: false,
   $item-border: false, // border of the pager item
+  $item-color: false, 
   $item-font: false,
   $item-font-size: $ia-tx-norm,
   $item-padding: false,
@@ -72,6 +73,7 @@
   // Properties of the current pager item
   $item-current-background: false,
   $item-current-border: false, // border of the pager item
+  $item-current-color: false, 
   $item-current-font: false,
   $item-current-font-size: $ia-tx-norm,
   $item-current-padding: false,
@@ -102,6 +104,7 @@
     li a {
       @include ia-background($item-background);
       @include ia-border($item-border);
+      @include ia-color($item-color);
       @include ia-font($item-font);
       @include ia-font-size($item-font-size);
       @include ia-padding($item-padding);
@@ -117,6 +120,7 @@
     li.pager-current span {
       @include ia-background($item-current-background);
       @include ia-border($item-current-border);
+      @include ia-color($item-current-color);
       @include ia-font($item-current-font);
       @include ia-font-size($item-current-font-size);
       @include ia-padding($item-current-padding);

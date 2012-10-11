@@ -11,8 +11,6 @@
 
 
 @mixin ia-view(
-
-
 ) {
   .view-header {
     padding: $ia-tx-norm*0.8 0;
@@ -27,12 +25,8 @@
     // When the view use a table 
     // View Bulk Operation or table display 
     // It use ia-table-admi mixin
-    table {
-    } 
   }
-  
 }
-
 
 @mixin ia-view-admi(
   $font-size: $ia-tx-norm
@@ -41,11 +35,7 @@
   table {
     @include ia-table-admi;
   }
-
-
 }
-
-
 
 // The default VBO apperance
 // The submit button is along the select list and not under
