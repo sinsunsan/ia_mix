@@ -84,6 +84,18 @@
 @mixin ia-border ($border:false){
   @if ($border){ border: $border; }
 }
+@mixin ia-border-bottom ($border:false){
+  @if ($border){ border-bottom: $border; }
+}
+@mixin ia-border-top ($border:false){
+  @if ($border){ border-top: $border; }
+}
+@mixin ia-border-left ($border:false){
+  @if ($border){ border-left: $border; }
+}
+@mixin ia-border-right ($border:false){
+  @if ($border){ border-right: $border; }
+}
 @mixin ia-color ($color:false){
   @if ($color){ color: $color; }
 }
