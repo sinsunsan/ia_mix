@@ -108,12 +108,8 @@
       &.ui-tabs-selected a, // field groupe module markup
       &.active a { // other module markup
         background: $tab-active-background;
-        
         border: $tab-active-border;
         border-bottom: none;
-        
-        
-        // border-bottom: solid 1px $col-blanc;
         @if ($tab-active-tx-color) { color: $tab-active-tx-color; }
         @if ($tab-active-tx-style) { color: $tab-active-tx-style; }
         padding: $font-size / 1.5 !important; 
